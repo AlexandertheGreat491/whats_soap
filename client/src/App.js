@@ -4,6 +4,7 @@ import './App.css';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import NoMatch from './pages/NoMatch';
 import Home from './pages/Home';
+import Footer from './components/Footer';
 
 function App() {
   return (
@@ -21,6 +22,7 @@ function App() {
 
         </Routes>
       </div>
+      <Footer />
     </Router>
   );
 }

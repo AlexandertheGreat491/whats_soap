@@ -4,8 +4,8 @@ import { Link } from "react-router-dom";
 // imports Navbar, Nav, Container, Modal, Tab from react bootstrap
 import { Navbar, Nav, Container, Modal, Tab } from "react-bootstrap";
 // imports the SignUpForm & LoginForm components
-import SignUpForm from "./SignUpForm";
-import LoginForm from "./LoginForm";
+import SignUpForm from "../SignUpForm";
+import LoginForm from "../LoginForm";
 // imports the auth logic
 import Auth from "../utils/auth";
 
