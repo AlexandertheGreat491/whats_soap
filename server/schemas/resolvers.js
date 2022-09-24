@@ -72,11 +72,11 @@ const resolvers = {
 
       throw new AuthenticationError('You need to be logged in!');
     },
-    addReaction: async (parent, { sudId, reactionBody }, context) => {
+    addsudReaction: async (parent, { sudId, sudreactionBody }, context) => {
       if (context.user) {
         const updatedSud = await Sud.findOneAndUpdate(
           { _id: sudId },
-          { $push: { reactions: { reactionBody, username: context.user.username } } },
+          { $push: { sudreactions: { sudreactionBody, username: context.user.username } } },
           { new: true, runValidators: true }
         );
 

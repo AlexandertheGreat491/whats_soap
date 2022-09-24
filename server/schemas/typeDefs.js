@@ -14,13 +14,13 @@ type Sud {
     sudsText: String
     createdAt: String
     username: String
-    reactionCount: Int
-    reactions: [Reaction]
+    sudreactionCount: Int
+    sudreactions: [SudReaction]
 }
 
-type Reaction {
+type SudReaction {
     _id: ID
-    reactionBody: String
+    sudreactionBody: String
     createdAt: String
     username: String
 }
@@ -42,7 +42,7 @@ type Mutation {
     login(email: String!, password: String!): Auth
     addUser(username: String!, email: String!, password: String!): Auth
     addSud(sudText: String!): Sud
-    addReaction(sudId: ID!, reactionBody: String!): Sud
+    addsudReaction(sudId: ID!, sudreactionBody: String!): Sud
 }
 `;
 
