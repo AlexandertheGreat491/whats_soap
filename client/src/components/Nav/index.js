@@ -4,10 +4,10 @@ import { Link } from "react-router-dom";
 // imports Navbar, Nav, Container, Modal, Tab from react bootstrap
 import { Navbar, Nav, Container, Modal, Tab } from "react-bootstrap";
 // imports the SignUpForm & LoginForm components
-import SignUpForm from "./SignUpForm";
-import LoginForm from "./LoginForm";
+import SignUpForm from "../SignUpForm";
+import LoginForm from "../LoginForm";
 // imports the auth logic
-import Auth from "../utils/auth";
+//import Auth from "../utils/auth";
 
 const Navigation = () => {
   // sets the modal display state
@@ -30,7 +30,7 @@ const Navigation = () => {
                 Signup
               </Nav.Link>
               {/*if user is logged in show saved recipes */}
-              {Auth.loggedIn() ? (
+              {/* {Auth.loggedIn() ? (
                 <>
                   <Nav.Link as={Link} to="/saved">
                     See Your Recipes!
@@ -41,7 +41,7 @@ const Navigation = () => {
                 <Nav.Link onClick={() => setShowModal(true)}>
                   Login/Signup
                 </Nav.Link>
-              )}
+              )} */}
             </Nav>
           </Navbar.Collapse>
         </Container>

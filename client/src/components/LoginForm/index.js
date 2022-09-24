@@ -1,27 +1,28 @@
 // imports React and its useState and useEffect hooks
-import React, { useState, useEffect } from "react";
+// add in useEffect hook
+import React, { useState } from "react";
 // imports the Form, Button, and Alert components from react-bootstrap
 import { Form, Button, Alert } from "react-bootstrap";
 // imports useMutation from @apollo/client
-import { useMutation } from "@apollo/client";
+//import { useMutation } from "@apollo/client";
 // imports the the LOGIN_USER mutation
-import { LOGIN_USER } from "../utils/mutations";
+//import { LOGIN_USER } from "../utils/mutations";
 // imports the auth logic
-import Auth from "../utils/auth";
+//import Auth from "../utils/auth";
 
 const LoginForm = () => {
   const [userFormData, setUserFormData] = useState({ email: "", password: "" });
   const [validated] = useState(false);
   const [showAlert, setShowAlert] = useState(false);
-  const [login, { error }] = useMutation(LOGIN_USER);
+  //const [login, { error }] = useMutation(LOGIN_USER);
 
-  useEffect(() => {
-    if (error) {
-      setShowAlert(true);
-    } else {
-      setShowAlert(false);
-    }
-  }, [error]);
+  // useEffect(() => {
+  //   if (error) {
+  //     setShowAlert(true);
+  //   } else {
+  //     setShowAlert(false);
+  //   }
+  // }, [error]);
 
   const handleInputChange = (event) => {
     const { name, value } = event.target;
@@ -38,16 +39,16 @@ const LoginForm = () => {
       event.stopPropagation();
     }
 
-    try {
-      const { data } = await login({
-        variables: { ...userFormData },
-      });
+    // try {
+    //   const { data } = await login({
+    //     variables: { ...userFormData },
+    //   });
 
-      console.log(data);
-      Auth.login(data.login.token);
-    } catch (e) {
-      console.error(e);
-    }
+    //   console.log(data);
+    //   Auth.login(data.login.token);
+    // } catch (e) {
+    //   console.error(e);
+    // }
 
     // clears the form values
     setUserFormData({
