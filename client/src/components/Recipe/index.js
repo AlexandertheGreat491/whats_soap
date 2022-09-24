@@ -17,6 +17,10 @@ function Recipe(recipe) {
                 ))}
             </ol>
             <p>posted by {recipe.user} on {recipe.createdAt}</p>
+            <div>
+                <h3>Reactions</h3>
+                <p>reaction......</p>
+            </div>
         </div>
     )
 }
