@@ -4,11 +4,26 @@ const dateFormat = require("../utils/dateFormat");
 
 const sudSchema = new Schema(
   {
-    sudText: {
+    title: {
       type: String,
-      required: "You need to wash your hands!",
+      required: "You need to enter a title!",
       minlength: 1,
-      maxlength: 280,
+      // maxlength: 280,
+    },
+    description: {
+      type: String,
+      required: "You need to enter a description!",
+      minlength: 1,
+      // maxlength: 280,
+    },
+    image: {
+      type: String,
+    },
+    ingredients: {
+      type: [String],
+    },
+    steps: {
+      type: [String],
     },
     createdAt: {
       type: Date,
