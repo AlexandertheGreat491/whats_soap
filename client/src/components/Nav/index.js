@@ -6,7 +6,7 @@ import { Navbar, Nav, Container, Modal, Tab } from "react-bootstrap";
 // imports the SignUpForm & LoginForm components
 import SignUpForm from "../SignUpForm";
 import LoginForm from "../LoginForm";
-import AddRecipe from "./pages/AddRecipe";
+import AddRecipe from "./components/AddRecipe";
 // imports the auth logic
 //import Auth from "../utils/auth";
 
