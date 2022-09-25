@@ -41,7 +41,7 @@ mutation addSud(
         createdAt: $createdAt
         username: $username
     )
-}`
+}`;
 
 export const EDIT_SUD = gql`
 mutation editSud(
@@ -55,7 +55,7 @@ mutation editSud(
         createdAt: $createdAt
         username: $username
     )
-)`
+)`;
 
 export const DELETE_SUD = gql`
 mutation deleteSud($sudId: ID!) {
@@ -71,7 +71,7 @@ mutation deleteSud($sudId: ID!) {
             createdAt
         }
     }
-}`
+}`;
 
 export const ADD_REACTION = gql`
 mutation addReaction($sudId: ID!) {
@@ -81,7 +81,7 @@ mutation addReaction($sudId: ID!) {
         username
         createdAt
     }
-}`
+}`;
 
 export const DELETE_REACTION = gql`
 mutation deleteReaction($sudId: ID!) {
@@ -91,4 +91,4 @@ mutation deleteReaction($sudId: ID!) {
         username
         createdAt
     }
-}`
+}`;

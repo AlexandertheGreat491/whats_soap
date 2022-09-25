@@ -14,6 +14,7 @@ import NoMatch from "./pages/NoMatch";
 import Home from "./pages/Home";
 import Footer from "./components/Footer";
 import Nav from "./components/Nav";
+// import AddRecipe from "./pages/AddRecipe";
 
 const httpLink = createHttpLink({
   uri: "/graphql",
@@ -42,6 +43,7 @@ function App() {
         <div>
           <Routes>
             <Route path="/" element={<Home />} />
+            {/* <Route exact path="/add" element={<AddRecipe />} /> */}
             <Route path="*" element={<NoMatch />} />
           </Routes>
         </div>
