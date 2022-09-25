@@ -1,13 +1,8 @@
-import React from "react";
+import React, { useState } from "react";
 
 function AddSud() {
-    function addIngredient() {
-        // add ingredient button
-    }
 
-    function addStep() {
-        // add step button 
-    }
+
 
     // const [addSud, {error}] = useMutation(ADD_SUD, {
     //     update(cache, {data: { addSud } }) {
@@ -25,6 +20,22 @@ function AddSud() {
     //     }
     // };
 
+    const [ingredientCounter, setIngredientCounter] = useState(1);
+
+    const addIngredient = (event) => {
+        event.preventDefault();
+        setIngredientCounter(ingredientCounter + 1);
+        console.log(ingredientCounter);
+    };
+
+    const [stepCounter, setStepCounter] = useState(1);
+
+    const addStep = (event) => {
+        event.preventDefault();
+        setStepCounter(stepCounter + 1);
+        console.log(stepCounter);
+    };
+
     return (
         <div>
             <h2>Add a Sud</h2>
@@ -33,17 +44,28 @@ function AddSud() {
                 <input placeholder="Title"></input>
                 <br></br>
                 <div><p>Ingredients: </p>
-                    <input placeholder="Ingredient"></input>
+                    {Array.from(Array(ingredientCounter)).map((c, index) => {
+                        return <div>
+                            <input key={c} type="text" placeholder="ingredient"></input>
+                            <br></br>
+                        </div>;
+                    })}
                     <br></br>
                     <button
                         onClick={addIngredient}>+</button>
                 </div>
                 <div><p>Steps: </p>
-                    <input placeholder="Step"></input>
+                    {Array.from(Array(stepCounter)).map((c, index) => {
+                        return <div>
+                            <input key={c} type="text" placeholder="step"></input>
+                            <br></br>
+                        </div>;
+                    })}
                     <br></br>
                     <button
                         onClick={addStep}>+</button>
                 </div>
+                <br></br>
                 <button >Submit</button>
             </form>
         </div>
