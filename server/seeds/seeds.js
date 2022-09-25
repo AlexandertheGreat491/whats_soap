@@ -44,11 +44,41 @@ db.once("open", async () => {
       // price: 7.99,
       // quantity: 20,
     },
+    {
+      name: "Fun Exfoliating Loofah Soap",
+      description:
+        "Who says you can't be creative with a melt and pour soap base? Loofah soaps are easy to make with this technique. Melt the base, add extras, and cut the loofahs in the color of your choice so they fit in the mold. Then pour the soap on top of the loofah. If you're making a rose soap, add rose essential oil and a bit of rose mica colorant to your base.",
+      image: "soap-recipe-8-5c2a3e2446e0fb0001495e49.webp",
+      // category: categories[1]._id,
+      // price: 7.99,
+      // quantity: 20,
+    },
   ]);
 
   console.log("products seeded");
 
   await User.deleteMany();
+
+  await User.create({
+    firstName: "user1",
+    lastName: "user1",
+    email: "user1@testmail.com",
+    password: "user1",
+  });
+
+  await User.create({
+    firstName: "user2",
+    lastName: "user2",
+    email: "user2@testmail.com",
+    password: "user2",
+  });
+
+  await User.create({
+    firstName: "user3",
+    lastName: "user3",
+    email: "user3@testmail.com",
+    password: "user3",
+  });
 
   await User.create({
     firstName: "luser",
