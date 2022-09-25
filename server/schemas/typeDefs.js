@@ -6,7 +6,7 @@ type User {
     _id: ID
     username: String
     email: String
-    suds: [Suds]
+    suds: [Sud]
 }
 
 type Sud { 
