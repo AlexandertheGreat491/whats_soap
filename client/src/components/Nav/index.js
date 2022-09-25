@@ -6,6 +6,7 @@ import { Navbar, Nav, Container, Modal, Tab } from "react-bootstrap";
 // imports the SignUpForm & LoginForm components
 import SignUpForm from "../SignUpForm";
 import LoginForm from "../LoginForm";
+import AddRecipe from "./components/AddRecipe";
 // imports the auth logic
 //import Auth from "../utils/auth";
 
@@ -28,6 +29,9 @@ const Navigation = () => {
               </Nav.Link>
               <Nav.Link as={Link} to="/">
                 Signup
+              </Nav.Link>
+              <Nav.Link as={Link} to="/">
+                AddRecipe
               </Nav.Link>
               {/*if user is logged in show saved recipes */}
               {/* {Auth.loggedIn() ? (

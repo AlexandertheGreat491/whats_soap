@@ -7,7 +7,7 @@ const typeDefs = gql`
     username: String
     email: String
     suds: [Sud]
-  }
+
 
   type Sud {
     _id: ID

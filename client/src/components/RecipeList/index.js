@@ -1,3 +1,5 @@
+import { useQuery } from '@apollo/client';
+import { QUERY_SUDS } from '../../utils/queries';
 import React from 'react';
 import Recipe from '../Recipe';
 
@@ -28,6 +30,9 @@ function RecipeList() {
             createdAt: "9.24.2022"
         },
     ]
+
+    // const { loading, data } = useQuery(QUERY_SUDS);
+    // console.log(data);
 
     return (
         <div>
