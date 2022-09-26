@@ -38,14 +38,16 @@ const resolvers = {
   },
 
   Mutation: {
-    addUser: async (parent, args) => {
+    // tested
+    addUser: async (_parent, args) => {
       const user = await User.create(args);
       const token = signToken(user);
 
       return { token, user };
     },
 
-    login: async (parent, { email, password }) => {
+    // tested password is encrypted so no worked
+    login: async (_parent, { email, password }) => {
       const user = await User.findOne({ email });
 
       if (!user) {
@@ -62,10 +64,17 @@ const resolvers = {
       return { token, user };
     },
 
-    addSud: async (parent, args, context) => {
+    // next to test
+    addSud: async (_parent, args, context) => {
       if (context.user) {
         const sud = await Sud.create({
           ...args,
+          title: context.title,
+          description: context.description,
+          image: context.image,
+          ingredients: context.ingredients,
+          steps: context.steps,
+          createdAt: context.createdAt,
           username: context.user.username,
         });
 
