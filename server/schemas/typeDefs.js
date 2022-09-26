@@ -6,16 +6,19 @@ const typeDefs = gql`
     _id: ID
     username: String
     email: String
-    suds: [Sud]
-
+  }
 
   type Sud {
     _id: ID
-    sudsText: String
+    title: String
+    description: String
+    image: String
+    ingredients: [String]
+    steps: [String]
     createdAt: String
     username: String
-    sudreactionCount: Int
     sudreactions: [SudReaction]
+    sudreactionCount: Int
   }
 
   type SudReaction {
