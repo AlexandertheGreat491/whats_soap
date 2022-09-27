@@ -66,16 +66,10 @@ const resolvers = {
 
     // next to test
     addSud: async (_parent, args, context) => {
-      if (context.user) {
+      if (args.username) {
         const sud = await Sud.create({
           ...args,
-          title: args.title,
-          description: args.description,
-          image: args.image,
-          ingredients: args.ingredients,
-          steps: args.steps,
-          createdAt: args.createdAt,
-          username: args.user.username,
+          username: args.username,
         });
 
         await User.findByIdAndUpdate(
@@ -92,7 +86,7 @@ const resolvers = {
 
     // this works on remove context and change to the user string
     // it depends on the context
-    addsudReaction: async (parent, { sudId, sudreactionBody }, context) => {
+    addsudReaction: async (_parent, { sudId, sudreactionBody }, context) => {
       if (context.user.username) {
         const updatedSud = await Sud.findOneAndUpdate(
           { _id: sudId },
