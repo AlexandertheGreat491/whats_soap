@@ -69,13 +69,13 @@ const resolvers = {
       if (context.user) {
         const sud = await Sud.create({
           ...args,
-          title: context.title,
-          description: context.description,
-          image: context.image,
-          ingredients: context.ingredients,
-          steps: context.steps,
-          createdAt: context.createdAt,
-          username: context.user.username,
+          title: args.title,
+          description: args.description,
+          image: args.image,
+          ingredients: args.ingredients,
+          steps: args.steps,
+          createdAt: args.createdAt,
+          username: args.user.username,
         });
 
         await User.findByIdAndUpdate(
@@ -90,6 +90,7 @@ const resolvers = {
       throw new AuthenticationError("You need to be logged in!");
     },
 
+    // next to test
     addsudReaction: async (parent, { sudId, sudreactionBody }, context) => {
       if (context.user) {
         const updatedSud = await Sud.findOneAndUpdate(
@@ -108,7 +109,7 @@ const resolvers = {
         return updatedSud;
       }
 
-      throw new AuthenticationError("You need to be logged in!");
+      // throw new AuthenticationError("You need to be logged in!");
     },
   },
 };
