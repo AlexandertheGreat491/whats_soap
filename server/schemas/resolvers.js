@@ -90,9 +90,10 @@ const resolvers = {
       throw new AuthenticationError("You need to be logged in!");
     },
 
-    // next to test
+    // this works on remove context and change to the user string
+    // it depends on the context
     addsudReaction: async (parent, { sudId, sudreactionBody }, context) => {
-      if (context.user) {
+      if (context.user.username) {
         const updatedSud = await Sud.findOneAndUpdate(
           { _id: sudId },
           {
@@ -109,7 +110,7 @@ const resolvers = {
         return updatedSud;
       }
 
-      // throw new AuthenticationError("You need to be logged in!");
+      throw new AuthenticationError("You need to be logged in!");
     },
   },
 };

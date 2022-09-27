@@ -45,7 +45,7 @@ const typeDefs = gql`
     login(email: String!, password: String!): Auth
     addUser(username: String!, email: String!, password: String!): Auth
     addSud(sudBody: String!): Sud
-    addsudReaction(sudId: ID!, sudreactionBody: String!): Sud
+    addsudReaction(sudId: ID!, sudreactionBody: String!, username: String!): Sud
   }
 `;
 
