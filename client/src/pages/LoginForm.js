@@ -4,15 +4,15 @@ import React, { useState } from "react";
 // imports the Form, Button, and Alert components from react-bootstrap
 //import { Form, Button, Alert } from "react-bootstrap";
 // imports useMutation from @apollo/client
-//import { useMutation } from "@apollo/client";
+import { useMutation } from "@apollo/client";
 // imports the the LOGIN mutation
-//import { LOGIN } from "../utils/mutations";
+import { LOGIN_USER } from "../utils/mutations";
 // imports the auth logic
-//import Auth from "../utils/auth";
+import Auth from "../utils/auth";
 
-const LoginForm = () => {
+const LoginForm = (props) => {
   const [formState, setFormState] = useState({ email: "", password: "" });
-  //const [login, { error }] = useMutation(LOGIN);
+  const [login, { error }] = useMutation(LOGIN_USER);
 
   const handleChange = (event) => {
     const { name, value } = event.target;
@@ -22,15 +22,15 @@ const LoginForm = () => {
   const handleFormSubmit = async (event) => {
     event.preventDefault();
 
-    //try {
-      //const { data } = await login({
-        //variables: { ...formState },
-      //});
+    try {
+      const { data } = await login({
+        variables: { ...formState },
+      });
 
-      //Auth.login(data.login.token);
-    //} catch (e) {
-      //console.error(e);
-    //}
+      Auth.login(data.login.token);
+    } catch (e) {
+      console.error(e);
+    }
 
     // clears the form values
     setFormState({
@@ -68,7 +68,7 @@ const LoginForm = () => {
                     Submit
                 </button>
             </form>
-            {/*{error && <div>Login failed</div>}*/}
+            {error && <div>Login failed</div>}
           </div>
         </div>
       </div>
