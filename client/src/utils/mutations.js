@@ -1,11 +1,12 @@
 import { gql } from '@apollo/client';
 
-export const LOGIN = gql`
+export const LOGIN_USER = gql`
   mutation login($email: String!, $password: String!) {
     login(email: $email, password: $password) {
       token
       user {
         _id
+        username
       }
     }
   }
@@ -43,20 +44,18 @@ mutation addSud(
     )
 }`;
 
+//this one is broken
 export const EDIT_SUD = gql`
-mutation editSud(
-    $sudId: ID!
-    $sudText: String!
-    $createdAt: Date!
-    $username: String!
-) {
-    editSud(
-        sudText: $sudText
-        createdAt: $createdAt
-        username: $username
-    )
-)`;
-
+mutation editSud($sudId: ID!){
+    editSud (sudId: $sudId) {
+        _id
+        sudText
+        createdAt
+        username
+    }
+    
+}`;
+    
 export const DELETE_SUD = gql`
 mutation deleteSud($sudId: ID!) {
     deleteSud(sudId: $sudId) {

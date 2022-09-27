@@ -12,8 +12,11 @@ import { setContext } from "@apollo/client/link/context";
 
 import NoMatch from "./pages/NoMatch";
 import Home from "./pages/Home";
+import Header from "./components/Header";
+import LoginForm from "./pages/LoginForm";
+import SignUpForm from "./pages/SignUpForm";
 import Footer from "./components/Footer";
-import Nav from "./components/Nav";
+//import Nav from "./components/Nav";
 // import AddRecipe from "./pages/AddRecipe";
 
 const httpLink = createHttpLink({
@@ -39,15 +42,20 @@ function App() {
   return (
     <ApolloProvider client={client}>
       <Router>
-        <Nav></Nav>
+        {/*<Nav></Nav>*/}
         <div>
+          <Header/>
+          <div>
           <Routes>
             <Route path="/" element={<Home />} />
             {/* <Route exact path="/add" element={<AddRecipe />} /> */}
+            <Route path="/login" element={<LoginForm/>}/>
+            <Route path="/signup" element={<SignUpForm/>}/>
             <Route path="*" element={<NoMatch />} />
           </Routes>
         </div>
         <Footer />
+        </div>
       </Router>
     </ApolloProvider>
   );

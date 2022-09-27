@@ -6,16 +6,19 @@ const typeDefs = gql`
     _id: ID
     username: String
     email: String
-    suds: [Sud]
-
+  }
 
   type Sud {
     _id: ID
-    sudsText: String
+    title: String
+    description: String
+    image: String
+    ingredients: [String]
+    steps: [String]
     createdAt: String
     username: String
-    sudreactionCount: Int
     sudreactions: [SudReaction]
+    sudreactionCount: Int
   }
 
   type SudReaction {
@@ -41,8 +44,9 @@ const typeDefs = gql`
   type Mutation {
     login(email: String!, password: String!): Auth
     addUser(username: String!, email: String!, password: String!): Auth
-    addSud(sudText: String!): Sud
-    addsudReaction(sudId: ID!, sudreactionBody: String!): Sud
+    addSud(sudBody: String!, username: String!, description: String!): Sud
+    addsudReaction(sudId: ID!, sudreactionBody: String!, username: String!): Sud
+    editSud(sudId: ID!, sudText: String!, username: String!): Sud
   }
 `;
 
