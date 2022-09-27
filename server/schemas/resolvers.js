@@ -25,6 +25,10 @@ const resolvers = {
       return User.findOne({ username }).select("-__v -password");
     },
 
+    sudsFindAll: async (_parent) => {
+      return Sud.find().sort({ createdAt: -1 });
+    },
+
     // tested
     suds: async (_parent, { username }) => {
       const params = username ? { username } : {};
@@ -66,10 +70,10 @@ const resolvers = {
 
     // next to test
     addSud: async (_parent, args, context) => {
-      if (args.username) {
+      if (context.user) {
         const sud = await Sud.create({
           ...args,
-          username: args.username,
+          username: context.user.username,
         });
 
         await User.findByIdAndUpdate(

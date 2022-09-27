@@ -37,6 +37,7 @@ const typeDefs = gql`
     me: User
     users: [User]
     user(username: String!): User
+    sudsFindAll: [Sud]
     suds(username: String): [Sud]
     sud(_id: ID!): Sud
   }
