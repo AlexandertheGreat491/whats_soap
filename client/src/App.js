@@ -42,7 +42,6 @@ function App() {
   return (
     <ApolloProvider client={client}>
       <Router>
-        {/*<Nav></Nav>*/}
         <div>
           <Header/>
           <div>

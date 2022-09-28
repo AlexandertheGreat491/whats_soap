@@ -48,6 +48,7 @@ const LoginForm = (props) => {
             <form onSubmit={handleFormSubmit}>
                 <input
                 className="form-input"
+                autoComplete="email"
                 placeholder="Your email"
                 name="email"
                 type="email"
@@ -57,6 +58,7 @@ const LoginForm = (props) => {
                 />
                 <input
                 className="form-input"
+                autoComplete="current-password"
                 placeholder="******"
                 name="password"
                 type="password"

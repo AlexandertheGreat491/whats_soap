@@ -3,7 +3,7 @@ import { QUERY_SUDS } from '../../utils/queries';
 import React from 'react';
 import Recipe from '../Recipe';
 
-function RecipeList() {
+function RecipeList(props) {
     const recipes = [
         {
             _id: 1,
@@ -31,8 +31,8 @@ function RecipeList() {
         },
     ]
 
-    // const { loading, data } = useQuery(QUERY_SUDS);
-    // console.log(data);
+     const { loading, data } = useQuery(QUERY_SUDS);
+     console.log(data);
 
     return (
         <div>

@@ -2,19 +2,23 @@ import { gql } from '@apollo/client';
 
 // query for all suds
 export const QUERY_SUDS = gql`
-{
-    suds {
-        _id
-        sudText
-        createdAt
-        username
-        sudreactions {
+    query Query {
+        sudsFindAll {
+          _id
+          title
+          description
+          image
+          ingredients
+          steps
+          createdAt
+          username
+          sudreactions {
             _id
             sudreactionBody
-            username
             createdAt
+            username
+          }
         }
-    }
 }`
 
 // query for individual sud

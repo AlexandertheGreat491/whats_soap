@@ -1,21 +1,18 @@
-// imports React along with the useState & useEffect hooks
-// add in useEffect hook
+// imports React along with the useState hook
 import React, { useState} from 'react';
-// imports the Form, Button, & Alert components from react-bootstrap
-//import { Form, Button, Alert } from 'react-bootstrap';
 // imports useMutation
-//import {useMutation} from '@apollo/client';
+import {useMutation} from '@apollo/client';
 // imports the ADD_USER mutation
-//import { ADD_USER } from '../utils/mutations';
+import { ADD_USER } from '../utils/mutations';
 
 // imports the auth logic
-//import Auth from '../utils/auth';
+import Auth from '../utils/auth';
 
 const SignUpForm = () => {
   // sets the initial form state
   const [formState, setFormState] = useState({ username: '', email: '', password: '' });
 
-  //const [addUser, {error}] = useMutation(ADD_USER);
+  const [addUser, {error}] = useMutation(ADD_USER);
 
    
   const handleChange = (event) => {
@@ -33,13 +30,13 @@ const SignUpForm = () => {
       //event.stopPropagation();
     //}
 
-     //try {
-       //const { data } = await addUser({ variables: { ...formState } });
+     try {
+       const { data } = await addUser({ variables: { ...formState } });
 
-        //Auth.login(data.addUser.token);
-     //} catch (err) {
-       //console.error(err);
-     //}
+        Auth.login(data.addUser.token);
+     } catch (err) {
+       console.error(err);
+     }
 
   };
 
@@ -61,6 +58,7 @@ const SignUpForm = () => {
                         />
                         <input
                         className='form-input'
+                        autoComplete='current-password'
                         placeholder='Your email'
                         name='email'
                         type='email'
@@ -70,7 +68,7 @@ const SignUpForm = () => {
                         />
                         <input
                         className='form-input'
-                        placeholder='******'
+                        placeholder='Your password'
                         name='password'
                         type='password'
                         id='password'
@@ -81,7 +79,7 @@ const SignUpForm = () => {
                             Submit
                         </button>
                     </form>
-                    {/*{error && <div>Signup failed</div>}*/}
+                    {error && <div>Signup failed</div>}
                 </div>
             </div>
         </div>
