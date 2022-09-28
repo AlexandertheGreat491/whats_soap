@@ -1,6 +1,8 @@
 import React from "react";
 
-function Recipe(recipe) {
+function SingleSud() {
+    const recipe = "hello";
+
     return (
         <div>
             <h2>{recipe.title}</h2>
@@ -22,10 +24,12 @@ function Recipe(recipe) {
             <p>posted by {recipe.username} on {recipe.createdAt}</p>
             <div>
                 <h3>Reactions</h3>
-                <p>reaction......</p>
+                {/* {recipe?.sudreactions.map((reaction) => (
+                    <p key={reaction}>{reaction}</p>
+                ))} */}
             </div>
         </div>
     )
 }
 
-export default Recipe;
+export default SingleSud;

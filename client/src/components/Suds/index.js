@@ -1,9 +1,9 @@
 import { useQuery } from '@apollo/client';
 import { QUERY_SUDS } from '../../utils/queries';
-import React from 'react';
-import Recipe from '../Recipe';
+import React, { useState, useEffect } from 'react';
+import { Link } from "react-router-dom";
 
-function RecipeList() {
+function Suds() {
     // const recipes = [
     //     {
     //         _id: 1,
@@ -37,29 +37,46 @@ function RecipeList() {
     //     },
     // ]
 
+
     const { data } = useQuery(QUERY_SUDS);
     const recipes = data.sudsFindAll;
     console.log(data);
-    console.log(data.sudsFindAll[0].title);
+
+    // const [recipes, setRecipes] = useState(data.sudsFindAll);
 
     return (
         <div>
             {/* map over recipes */}
             {recipes.map((recipe) => (
-                <Recipe
-                    key={recipe._id}
-                    _id={recipe._id}
-                    title={recipe.title}
-                    username={recipe.username}
-                    description={recipe.description}
-                    image={recipe.image}
-                    ingredients={recipe.ingredients}
-                    steps={recipe.steps}
-                    createdAt={recipe.createdAt}
-                />
+                <div>
+                    <Link to={`/sud/${recipe._id}`}><h2>{recipe.title}</h2></Link>
+                    <img src={`/images/${recipe.image}`} alt={recipe.title}></img>
+                    <h3>Description</h3>
+                    <p>{recipe.description}</p>
+                    <h3>Ingredients</h3>
+                    <ul>
+                        {recipe.ingredients.map((ingredient) => (
+                            <li key={ingredient}>{ingredient}</li>
+                        ))}
+                    </ul>
+                    <h3>Instructions</h3>
+                    <ol>
+                        {recipe.steps.map((step) => (
+                            <li key={step}>{step}</li>
+                        ))}
+                    </ol>
+                    <p>posted by {recipe.username} on {recipe.createdAt}</p>
+                    <div>
+                        <h3>Reactions</h3>
+                        {/* {recipe?.sudreactions.map((reaction) => (
+                                <p key={reaction}>{reaction}</p>
+                            ))} */}
+                    </div>
+                </div>
+
             ))}
         </div>
     )
 }
 
-export default RecipeList;
+export default Suds;

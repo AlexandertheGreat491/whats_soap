@@ -16,6 +16,7 @@ import Header from "./components/Header";
 import LoginForm from "./pages/LoginForm";
 import SignUpForm from "./pages/SignUpForm";
 import Footer from "./components/Footer";
+import SingleSud from "./components/SingleSud";
 //import Nav from "./components/Nav";
 // import AddRecipe from "./pages/AddRecipe";
 
@@ -43,17 +44,18 @@ function App() {
     <ApolloProvider client={client}>
       <Router>
         <div>
-          <Header/>
+          <Header />
           <div>
-          <Routes>
-            <Route path="/" element={<Home />} />
-            {/* <Route exact path="/add" element={<AddRecipe />} /> */}
-            <Route path="/login" element={<LoginForm/>}/>
-            <Route path="/signup" element={<SignUpForm/>}/>
-            <Route path="*" element={<NoMatch />} />
-          </Routes>
-        </div>
-        <Footer />
+            <Routes>
+              <Route path="/" element={<Home />} />
+              {/* <Route exact path="/add" element={<AddRecipe />} /> */}
+              <Route path="/login" element={<LoginForm />} />
+              <Route path="/signup" element={<SignUpForm />} />
+              <Route path="/sud/:id" element={<SingleSud />} />
+              <Route path="*" element={<NoMatch />} />
+            </Routes>
+          </div>
+          <Footer />
         </div>
       </Router>
     </ApolloProvider>

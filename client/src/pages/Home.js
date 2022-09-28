@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import RecipeList from "../components/RecipeList";
+import Suds from "../components/Suds";
 import AddSud from "../components/AddSud";
 
 const Home = () => {
@@ -22,7 +22,7 @@ const Home = () => {
                 ))}
             </nav>
             {currentOption === options[1] && <AddSud />}
-            {currentOption === options[0] && <RecipeList />}
+            {currentOption === options[0] && <Suds />}
         </div>
     );
 };
