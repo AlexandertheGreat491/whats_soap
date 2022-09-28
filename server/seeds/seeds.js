@@ -93,7 +93,7 @@ db.once("open", async () => {
       ],
       steps: [
         "Step 1: Dry your citrus. Slice citrus (lemons, lime, oranges) into thin slices, about 1/8″ of an inch). Keep in mind the size of your mold. I chose very small citrus fruits to make sure the slices would fit. Preheat your oven to 200 degrees. Lay your citrus on top of a wire rack on top of a pan and place in the oven until dry, about 2-3 hours. How long it takes depends on how thick your slices are and how wide. Remove the dried citrus and allow to cool.",
-        "Step 1: Dry your citrus. Slice citrus (lemons, lime, oranges) into thin slices, about 1/8″ of an inch). Keep in mind the size of your mold. I chose very small citrus fruits to make sure the slices would fit. Preheat your oven to 200 degrees. Lay your citrus on top of a wire rack on top of a pan and place in the oven until dry, about 2-3 hours. How long it takes depends on how thick your slices are and how wide. Remove the dried citrus and allow to cool.",
+        "Step 2. Break up your soap base into chunks and place in a microwave safe container. Microwave on 20-30 second intervals, stirring to make sure it’s smooth and melted. Add a few drops of essential oils to the melted soap base and stir.",
         "Step 3. Ask your child to help lay out the citrus inside the molds before pouring the soap.",
         "Step 4. Help your child pour the soap base into the molds. Be careful it can be hot so either do this step alone or help them with careful supervision.",
         "After a couple of hours, pop the soaps out and you have beautiful, handmade citrus soaps!",

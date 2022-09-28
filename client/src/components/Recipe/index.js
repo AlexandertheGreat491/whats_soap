@@ -4,6 +4,9 @@ function Recipe(recipe) {
     return (
         <div>
             <h2>{recipe.title}</h2>
+            <img src={`/images/${recipe.image}`} alt={recipe.title}></img>
+            <h3>Description</h3>
+            <p>{recipe.description}</p>
             <h3>Ingredients</h3>
             <ul>
                 {recipe.ingredients.map((ingredient) => (
@@ -16,7 +19,7 @@ function Recipe(recipe) {
                     <li key={step}>{step}</li>
                 ))}
             </ol>
-            <p>posted by {recipe.user} on {recipe.createdAt}</p>
+            <p>posted by {recipe.username} on {recipe.createdAt}</p>
             <div>
                 <h3>Reactions</h3>
                 <p>reaction......</p>
