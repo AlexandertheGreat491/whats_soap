@@ -16,7 +16,7 @@ import Header from "./components/Header";
 import LoginForm from "./pages/LoginForm";
 import SignUpForm from "./pages/SignUpForm";
 import Footer from "./components/Footer";
-import SingleSud from "./components/SingleSud";
+import SingleSud from "./pages/SingleSud";
 //import Nav from "./components/Nav";
 // import AddRecipe from "./pages/AddRecipe";
 

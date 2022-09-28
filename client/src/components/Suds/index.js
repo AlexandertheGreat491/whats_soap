@@ -4,42 +4,42 @@ import React, { useState, useEffect } from 'react';
 import { Link } from "react-router-dom";
 
 function Suds() {
-    // const recipes = [
-    //     {
-    //         _id: 1,
-    //         title: "Soap dummy",
-    //         user: "oliviamckee",
-    //         ingredients: ["lavender", "soap base"],
-    //         steps: ["mix all in bowl", "pour into mold"],
-    //         createdAt: "9.24.2022",
-    //         description: "soap",
-    //         image: "soap-recipe-18-5c2a5ad2c9e77c00010d2cb5.webp"
-    //     },
-    //     {
-    //         _id: 2,
-    //         title: "Soap dummy2",
-    //         user: "oliviamckee",
-    //         ingredients: ["oatmeal", "soap base"],
-    //         steps: ["mix all in bowl", "pour into mold"],
-    //         createdAt: "9.24.2022",
-    //         description: "soap",
-    //         image: "soap-recipe-18-5c2a5ad2c9e77c00010d2cb5.webp"
-    //     },
-    //     {
-    //         _id: 3,
-    //         title: "Soap dummy3",
-    //         user: "oliviamckee",
-    //         ingredients: ["honey", "soap base"],
-    //         steps: ["mix all in bowl", "pour into mold"],
-    //         createdAt: "9.24.2022",
-    //         description: "soap",
-    //         image: "soap-recipe-18-5c2a5ad2c9e77c00010d2cb5.webp"
-    //     },
-    // ]
+    const recipes = [
+        {
+            _id: 1,
+            title: "Soap dummy",
+            user: "oliviamckee",
+            ingredients: ["lavender", "soap base"],
+            steps: ["mix all in bowl", "pour into mold"],
+            createdAt: "9.24.2022",
+            description: "soap",
+            image: "soap-recipe-18-5c2a5ad2c9e77c00010d2cb5.webp"
+        },
+        {
+            _id: 2,
+            title: "Soap dummy2",
+            user: "oliviamckee",
+            ingredients: ["oatmeal", "soap base"],
+            steps: ["mix all in bowl", "pour into mold"],
+            createdAt: "9.24.2022",
+            description: "soap",
+            image: "soap-recipe-18-5c2a5ad2c9e77c00010d2cb5.webp"
+        },
+        {
+            _id: 3,
+            title: "Soap dummy3",
+            user: "oliviamckee",
+            ingredients: ["honey", "soap base"],
+            steps: ["mix all in bowl", "pour into mold"],
+            createdAt: "9.24.2022",
+            description: "soap",
+            image: "soap-recipe-18-5c2a5ad2c9e77c00010d2cb5.webp"
+        },
+    ]
 
 
     const { data } = useQuery(QUERY_SUDS);
-    const recipes = data.sudsFindAll;
+    // const recipes = data.sudsFindAll;
     console.log(data);
 
     // const [recipes, setRecipes] = useState(data.sudsFindAll);

@@ -23,20 +23,25 @@ export const QUERY_SUDS = gql`
 
 // query for individual sud
 export const QUERY_SUD = gql`
-query getSud($_id: ID) {
-    getSud(id: $ID) {
+query Query($id: ID!) {
+    sud(_id: $id) {
+      _id
+      title
+      description
+      image
+      ingredients
+      steps
+      createdAt
+      username
+      sudreactions {
         _id
-        sudText
+        sudreactionBody
         createdAt
         username
-        sudreactions {
-            _id
-            sudreactionBody
-            username
-            createdAt
-        }
+      }
+      sudreactionCount
     }
-}`
+  }`
 
 // all users
 export const QUERY_USERS = gql`

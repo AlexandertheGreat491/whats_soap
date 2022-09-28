@@ -1,7 +1,16 @@
 import React from "react";
+import { useParams } from 'react-router-dom';
+import { QUERY_SUD } from "../utils/queries";
+import { useQuery } from '@apollo/client';
 
 function SingleSud() {
-    const recipe = "hello";
+    const { id: sudId } = useParams();
+
+    const { data } = useQuery(QUERY_SUD, {
+        variables: { id: sudId }
+    });
+
+    const recipe = data.sud;
 
     return (
         <div>
