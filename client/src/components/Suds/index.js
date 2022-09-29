@@ -1,6 +1,4 @@
-import { useQuery } from '@apollo/client';
-import { QUERY_SUDS } from '../../utils/queries';
-import React, { useEffect, useState } from 'react';
+import React from 'react';
 import { Link } from "react-router-dom";
 
 function Suds({ recipes }) {
@@ -9,7 +7,7 @@ function Suds({ recipes }) {
         <div>
             {/* map over recipes */}
             {recipes.map((recipe) => (
-                <div>
+                <div key={recipe._id}>
                     <Link to={`/sud/${recipe._id}`}><h2>{recipe.title}</h2></Link>
                     <img src={`/images/${recipe.image}`} alt={recipe.title}></img>
                     <h3>Description</h3>
