@@ -4,13 +4,14 @@ import { QUERY_SUD } from "../utils/queries";
 import { useQuery } from '@apollo/client';
 
 function SingleSud() {
-    const { id: sudId } = useParams();
+    // const { id: sudId } = useParams();
 
-    const { data } = useQuery(QUERY_SUD, {
-        variables: { id: sudId }
-    });
+    // const { data } = useQuery(QUERY_SUD, {
+    //     variables: { id: sudId }
+    // });
 
-    const recipe = data.sud;
+    // console.log(data);
+    const recipe = 'data.sud';
 
     return (
         <div>

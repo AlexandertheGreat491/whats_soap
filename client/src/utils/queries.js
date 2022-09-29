@@ -44,45 +44,45 @@ query Query($id: ID!) {
   }`
 
 // all users
-export const QUERY_USERS = gql`
-{
-    user {
-        _id
-        username
-        email
-        suds {
-            _id
-            sudText
-            createdAt
-            username
-            sudreactions {
-                _id
-                sudreactionBody
-                username
-                createdAt
-            }
-        }
-    }
-}`
+// export const QUERY_USERS = gql`
+// {
+//     user {
+//         _id
+//         username
+//         email
+//         suds {
+//             _id
+//             sudText
+//             createdAt
+//             username
+//             sudreactions {
+//                 _id
+//                 sudreactionBody
+//                 username
+//                 createdAt
+//             }
+//         }
+//     }
+// }`
 
-// individual user
-export const QUERY_USER = gql`
-query getUser($_id: ID) {
-    user(id: $ID) {
-        _id
-        username
-        email
-        suds {
-            _id
-            sudText
-            createdAt
-            username
-            sudreactions {
-                _id
-                sudreactionBody
-                username
-                createdAt
-            }
-        }
-    }
-}`
+// // individual user
+// export const QUERY_USER = gql`
+// query getUser($_id: ID) {
+//     user(id: $ID) {
+//         _id
+//         username
+//         email
+//         suds {
+//             _id
+//             sudText
+//             createdAt
+//             username
+//             sudreactions {
+//                 _id
+//                 sudreactionBody
+//                 username
+//                 createdAt
+//             }
+//         }
+//     }
+// }`
