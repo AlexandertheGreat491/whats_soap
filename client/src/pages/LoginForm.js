@@ -1,11 +1,8 @@
 // imports React and its useState and useEffect hooks
-// add in useEffect hook
 import React, { useState } from "react";
-// imports the Form, Button, and Alert components from react-bootstrap
-//import { Form, Button, Alert } from "react-bootstrap";
 // imports useMutation from @apollo/client
 import { useMutation } from "@apollo/client";
-// imports the the LOGIN mutation
+// imports the the LOGIN_USER mutation
 import { LOGIN_USER } from "../utils/mutations";
 // imports the auth logic
 import Auth from "../utils/auth";
