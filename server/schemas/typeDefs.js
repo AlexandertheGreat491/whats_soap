@@ -51,6 +51,9 @@ const typeDefs = gql`
       username: String!
       sudId: ID!
     ): Sud
+    deleteSud(
+      sudId: ID!
+    ): Sud
   }
 `;
 

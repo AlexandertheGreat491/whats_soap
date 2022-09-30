@@ -1,7 +1,8 @@
 import React from "react";
 import { useParams, Link } from 'react-router-dom';
 import { QUERY_SUD } from "../utils/queries";
-import { useQuery } from '@apollo/client';
+import { DELETE_SUD } from "../utils/mutations";
+import { useQuery, useMutation } from '@apollo/client';
 import Auth from '../utils/auth';
 
 function SingleSud() {
@@ -12,9 +13,24 @@ function SingleSud() {
 
     const recipe = data?.sud || [];
 
+    const [deleteSud, { error }] = useMutation(DELETE_SUD, {
+        update(cache, { data: { addSud } }) {
+            const { suds } = cache.readQuery({ query: DELETE_SUD });
+            cache.writeQuery({
+                query: DELETE_SUD,
+                data: { suds: [deleteSud, ...suds] }
+            });
+        }
+    });
 
-    const deleteSud = () => {
-        console.log("hello");
+    const deleteSubmit = async (event) => {
+        try {
+            await deleteSud({
+                variables: { sudId }
+            })
+        } catch (e) {
+            console.error(e);
+        }
     }
 
     return (
@@ -32,7 +48,7 @@ function SingleSud() {
                     {Auth.loggedIn() ? (
                         <>
                             <Link to={`/edit/${recipe._id}`}>Edit</Link>
-                            <a href="/" onClick={deleteSud}>Delete</a>
+                            <a href="/" onClick={deleteSubmit}>Delete</a>
 
                         </>
                     ) : (

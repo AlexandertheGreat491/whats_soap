@@ -55,8 +55,13 @@ mutation EditSud($title: String!, $description: String!, $ingredients: String!, 
     createdAt
     username
   }
-}
-`;
+}`;
 
+export const DELETE_SUD = gql`
+mutation Mutation($sudId: ID!) {
+  deleteSud(sudId: $sudId) {
+    _id
+  }
+}`;
 
 

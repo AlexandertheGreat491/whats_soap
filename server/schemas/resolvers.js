@@ -96,11 +96,21 @@ const resolvers = {
           description: description,
           ingredients: ingredients,
           steps: steps,
+          createdAt: Date.now(),
           username: username,
         },
         { new: true }
       )
       return updatedSud;
+    },
+
+    deleteSud: async (
+      _parent, { sudId }
+    ) => {
+      const deletedSud = await Sud.findByIdAndDelete(
+        { _id: sudId }
+      )
+      return deletedSud;
     }
   },
 };
