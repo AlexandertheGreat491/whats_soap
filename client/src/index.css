@@ -1,3 +1,4 @@
+/* general styling */
 body {
   margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
@@ -19,4 +20,68 @@ code {
   --tertiary: hsla(12, 100%, 55%, 1); /*red-orange-color-wheel*/
   --quaternary: hsla(17, 34%, 38%, 1); /*coffee*/
   --background: hsla(357, 20%, 21%, 1); /*old-burgundy*/
+}
+
+*{
+  font-family: 'Roboto', sans-serif;
+}
+
+/*header styling */
+header {
+  background-color: var(--primary);
+  display: flex;
+  justify-content: center;
+  width: 100%;
+}
+
+header h1 {
+  font-family: 'Roboto', sans-serif;
+  font-size: 2.5em;
+}
+
+header a {
+  text-decoration: none;
+}
+
+/* nav styling */
+.tertiary {
+  color: var(--tertiary);
+}
+
+nav a {
+  color: var(--tertiary);
+}
+
+.buttons {
+  border: 0.1875em groove var(--secondary);
+  border-radius: 0.3125em;
+}
+
+/*card styling */
+#card {
+  background-color: var(--secondary);
+}
+
+.card h2 {
+  font-size: 1.25em;
+  color: var(--background);
+}
+
+.card a {
+  text-decoration: none;
+}
+
+#main {
+  background-color: var(--quaternary) ;
+}
+
+/* footer styling */
+footer {
+  background-color: var(--primary);
+  color: var(--tertiary);
+  font-size: 0.875em;
+}
+
+footer a {
+  color: var(--tertiary);
 }

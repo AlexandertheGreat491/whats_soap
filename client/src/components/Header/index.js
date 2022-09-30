@@ -16,17 +16,17 @@ const Header = (props) => {
   };
 
   return (
-    <header className="bg-secondary mb-4 py-2 flex-row align-center">
-      <div className="container flex-row justify-space-between-lg justify-center align-center">
+    <header className='pb-3'>
+      <div>
         <Link to="/">
-          <h1>What's Soap?</h1>
+          <h1 className='tertiary'>What's Soap?</h1>
         </Link>
 
-        <nav className="text-center">
+        <nav className="text-center container">
           {Auth.loggedIn() ? (
             <>
               <Link to="/profile">Me</Link>
-              <a href="/" onClick={logout}>
+              <a  href="/" onClick={logout}>
                 Logout
               </a>
 
@@ -41,8 +41,8 @@ const Header = (props) => {
             </>
           ) : (
             <>
-              <Link to="/login">Login</Link>
-              <Link to="/signup">Signup</Link>
+              <Link  className='m-3 p-1 buttons' to="/login">Login</Link>
+              <Link className=' p-1 buttons' to="/signup">Signup</Link>
             </>
           )}
         </nav>

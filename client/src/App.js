@@ -54,7 +54,7 @@ function App() {
           <Header options={options}
             setOption={setOption}
             currentOption={currentOption} />
-          <div>
+          <div id="main">
             <Routes>
               <Route path="/" element={<Home options={options}
                 setOption={setOption}
