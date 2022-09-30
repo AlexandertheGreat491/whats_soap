@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import "./App.css";
 
@@ -17,8 +17,7 @@ import LoginForm from "./pages/LoginForm";
 import SignUpForm from "./pages/SignUpForm";
 import Footer from "./components/Footer";
 import SingleSud from "./pages/SingleSud";
-//import Nav from "./components/Nav";
-// import AddRecipe from "./pages/AddRecipe";
+
 
 const httpLink = createHttpLink({
   uri: "/graphql",
@@ -39,16 +38,26 @@ const client = new ApolloClient({
   cache: new InMemoryCache(),
 });
 
+
 function App() {
+  const [options] = useState([
+    { name: "View Suds" },
+    { name: "Add" }
+  ]);
+  const [currentOption, setOption] = useState(options[0]);
+
   return (
     <ApolloProvider client={client}>
       <Router>
         <div>
-          <Header />
+          <Header options={options}
+            setOption={setOption}
+            currentOption={currentOption} />
           <div>
             <Routes>
-              <Route path="/" element={<Home />} />
-              {/* <Route exact path="/add" element={<AddRecipe />} /> */}
+              <Route path="/" element={<Home options={options}
+                setOption={setOption}
+                currentOption={currentOption} />} />
               <Route path="/login" element={<LoginForm />} />
               <Route path="/signup" element={<SignUpForm />} />
               <Route path="/sud/:id" element={<SingleSud />} />

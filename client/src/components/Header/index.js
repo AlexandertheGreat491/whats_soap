@@ -1,9 +1,14 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-
 import Auth from '../../utils/auth';
 
-const Header = () => {
+const Header = (props) => {
+
+  const {
+    options = [],
+    setOption
+  } = props;
+
   const logout = event => {
     event.preventDefault();
     Auth.logout();
@@ -30,6 +35,13 @@ const Header = () => {
               <Link to="/signup">Signup</Link>
             </>
           )}
+          {options.map((option) => (
+            <button key={option.name}>
+              <span onClick={() => setOption(option)}>
+                {option.name}
+              </span>
+            </button>
+          ))}
         </nav>
       </div>
     </header>
