@@ -11,12 +11,6 @@ export const QUERY_SUDS = gql`
           steps
           createdAt
           username
-          sudreactions {
-            _id
-            sudreactionBody
-            createdAt
-            username
-          }
         }
 }`
 
@@ -31,56 +25,6 @@ query Query($id: ID!) {
       steps
       createdAt
       username
-      sudreactions {
-        _id
-        sudreactionBody
-        createdAt
-        username
-      }
-      sudreactionCount
     }
   }`
 
-// all users
-// export const QUERY_USERS = gql`
-// {
-//     user {
-//         _id
-//         username
-//         email
-//         suds {
-//             _id
-//             sudText
-//             createdAt
-//             username
-//             sudreactions {
-//                 _id
-//                 sudreactionBody
-//                 username
-//                 createdAt
-//             }
-//         }
-//     }
-// }`
-
-// // individual user
-// export const QUERY_USER = gql`
-// query getUser($_id: ID) {
-//     user(id: $ID) {
-//         _id
-//         username
-//         email
-//         suds {
-//             _id
-//             sudText
-//             createdAt
-//             username
-//             sudreactions {
-//                 _id
-//                 sudreactionBody
-//                 username
-//                 createdAt
-//             }
-//         }
-//     }
-// }`

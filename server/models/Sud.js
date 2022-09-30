@@ -1,5 +1,4 @@
 const { Schema, model } = require("mongoose");
-const sudreactionSchema = require("./SudReactions");
 const dateFormat = require("../utils/dateFormat");
 
 const sudSchema = new Schema(
@@ -7,14 +6,12 @@ const sudSchema = new Schema(
     title: {
       type: String,
       required: "You need to enter a title!",
-      minlength: 1,
-      // maxlength: 280,
+      minlength: 1
     },
     description: {
       type: String,
       required: "You need to enter a description!",
-      minlength: 1,
-      // maxlength: 280,
+      minlength: 1
     },
     ingredients: {
       type: String,
@@ -30,8 +27,7 @@ const sudSchema = new Schema(
     username: {
       type: String,
       required: true,
-    },
-    sudreactions: [sudreactionSchema],
+    }
   },
   {
     toJSON: {
@@ -39,10 +35,6 @@ const sudSchema = new Schema(
     },
   }
 );
-
-sudSchema.virtual("sudreactionCount").get(function () {
-  return this.sudreactions.length;
-});
 
 const Sud = model("Sud", sudSchema);
 

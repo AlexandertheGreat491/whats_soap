@@ -44,50 +44,5 @@ mutation Mutation($title: String!, $description: String!, $ingredients: String!,
   }
 }`;
 
-//this one is broken
-// export const EDIT_SUD = gql`
-// mutation editSud($sudId: ID!){
-//     editSud (sudId: $sudId) {
-//         _id
-//         sudText
-//         createdAt
-//         username
-//     }
-    
-// }`;
-    
-// export const DELETE_SUD = gql`
-// mutation deleteSud($sudId: ID!) {
-//     deleteSud(sudId: $sudId) {
-//         _id
-//         sudText
-//         createdAt
-//         username
-//         sudreactions {
-//             _id
-//             sudreactionBody
-//             username
-//             createdAt
-//         }
-//     }
-// }`;
 
-// export const ADD_REACTION = gql`
-// mutation addReaction($sudId: ID!) {
-//     addReaction(sudId: $sudId) {
-//         _id
-//         sudreactionBody
-//         username
-//         createdAt
-//     }
-// }`;
 
-// export const DELETE_REACTION = gql`
-// mutation deleteReaction($sudId: ID!) {
-//     deleteReaction(sudId: $sudId) {
-//         _id
-//         sudreactionBody
-//         username
-//         createdAt
-//     }
-// }`;

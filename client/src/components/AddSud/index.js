@@ -47,7 +47,6 @@ function AddSud(props) {
 
     const handleFormSubmit = async (event) => {
 
-
         try {
             await addSud({
                 variables: {
@@ -66,9 +65,7 @@ function AddSud(props) {
         setIngredients('');
         setSteps('');
         setUsername('');
-        console.log("before setoptions");
         setOption(options[0]);
-        console.log("after setoption");
     };
 
     return (

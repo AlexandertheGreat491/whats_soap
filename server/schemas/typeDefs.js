@@ -6,6 +6,7 @@ const typeDefs = gql`
     _id: ID
     username: String
     email: String
+    suds: [Sud]
   }
 
   type Sud {
@@ -14,15 +15,6 @@ const typeDefs = gql`
     description: String
     ingredients: String
     steps: String
-    createdAt: String
-    username: String
-    sudreactions: [SudReaction]
-    sudreactionCount: Int
-  }
-
-  type SudReaction {
-    _id: ID
-    sudreactionBody: String
     createdAt: String
     username: String
   }
@@ -51,7 +43,6 @@ const typeDefs = gql`
       steps: String!
       username: String!
     ): Sud
-    addsudReaction(sudId: ID!, sudreactionBody: String!, username: String!): Sud
     editSud(sudId: ID!, sudText: String!, username: String!): Sud
   }
 `;

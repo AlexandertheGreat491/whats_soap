@@ -23,12 +23,6 @@ function SingleSud() {
                     <h3>Instructions</h3>
                     <p>{recipe.steps}</p>
                     <p>posted by {recipe.username} on {recipe.createdAt}</p>
-                    {/* <div>
-                        <h3>Reactions</h3>
-                        {recipe?.sudreactions.map((reaction) => (
-                    <p key={reaction}>{reaction}</p>
-                ))}
-                    </div> */}
                 </div>}
         </div>
     )

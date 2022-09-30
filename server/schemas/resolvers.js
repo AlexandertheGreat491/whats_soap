@@ -92,29 +92,6 @@ const resolvers = {
       return sud;
 
     },
-
-    // this works on remove context and change to the user string
-    // it depends on the context
-    addsudReaction: async (_parent, { sudId, sudreactionBody }, context) => {
-      if (context.user.username) {
-        const updatedSud = await Sud.findOneAndUpdate(
-          { _id: sudId },
-          {
-            $push: {
-              sudreactions: {
-                sudreactionBody,
-                username: context.user.username,
-              },
-            },
-          },
-          { new: true, runValidators: true }
-        );
-
-        return updatedSud;
-      }
-
-      throw new AuthenticationError("You need to be logged in!");
-    },
   },
 };
 
