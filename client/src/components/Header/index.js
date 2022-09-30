@@ -28,20 +28,25 @@ const Header = (props) => {
               <a href="/" onClick={logout}>
                 Logout
               </a>
+
+              {options.map((option) => (
+                <button key={option.name}>
+                  <span onClick={() => setOption(option)}>
+                    {option.name}
+                  </span>
+                </button>
+              ))}
+
             </>
+
+
           ) : (
             <>
               <Link to="/login">Login</Link>
               <Link to="/signup">Signup</Link>
             </>
           )}
-          {options.map((option) => (
-            <button key={option.name}>
-              <span onClick={() => setOption(option)}>
-                {option.name}
-              </span>
-            </button>
-          ))}
+
         </nav>
       </div>
     </header>

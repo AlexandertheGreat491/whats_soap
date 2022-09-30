@@ -51,7 +51,6 @@ function AddSud() {
         }
     };
 
-
     return (
         <div>
             <h2>Add a Sud</h2>
