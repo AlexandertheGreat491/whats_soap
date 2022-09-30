@@ -1,7 +1,8 @@
 import React from "react";
-import { useParams } from 'react-router-dom';
+import { useParams, Link } from 'react-router-dom';
 import { QUERY_SUD } from "../utils/queries";
 import { useQuery } from '@apollo/client';
+import Auth from '../utils/auth';
 
 function SingleSud() {
     const { id: sudId } = useParams();
@@ -10,6 +11,11 @@ function SingleSud() {
     });
 
     const recipe = data?.sud || [];
+
+
+    const deleteSud = () => {
+        console.log("hello");
+    }
 
     return (
         <div>
@@ -23,6 +29,17 @@ function SingleSud() {
                     <h3>Instructions</h3>
                     <p>{recipe.steps}</p>
                     <p>posted by {recipe.username} on {recipe.createdAt}</p>
+                    {Auth.loggedIn() ? (
+                        <>
+                            <Link to={`/edit/${recipe._id}`}>Edit</Link>
+                            <a href="/" onClick={deleteSud}>Delete</a>
+
+                        </>
+                    ) : (
+                        <>
+                            <p>Please log in to edit a Sud</p>
+                        </>
+                    )}
                 </div>}
         </div>
     )

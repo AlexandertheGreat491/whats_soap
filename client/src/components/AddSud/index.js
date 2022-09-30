@@ -46,7 +46,6 @@ function AddSud(props) {
     });
 
     const handleFormSubmit = async (event) => {
-
         try {
             await addSud({
                 variables: {

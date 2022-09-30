@@ -17,6 +17,7 @@ import LoginForm from "./pages/LoginForm";
 import SignUpForm from "./pages/SignUpForm";
 import Footer from "./components/Footer";
 import SingleSud from "./pages/SingleSud";
+import EditSud from "./pages/EditSud";
 
 
 const httpLink = createHttpLink({
@@ -61,6 +62,9 @@ function App() {
               <Route path="/login" element={<LoginForm />} />
               <Route path="/signup" element={<SignUpForm />} />
               <Route path="/sud/:id" element={<SingleSud />} />
+              <Route path="/edit/:id" element={<EditSud options={options}
+                setOption={setOption}
+                currentOption={currentOption} />} />
               <Route path="*" element={<NoMatch />} />
             </Routes>
           </div>

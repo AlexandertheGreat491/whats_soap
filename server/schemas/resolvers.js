@@ -82,16 +82,26 @@ const resolvers = {
         createdAt: Date.now(),
         username: username,
       });
-
-      // await User.findByIdAndUpdate(
-      //   { _id: "6336555332d03ddc3146bbfa" },
-      //   { $push: { sud: sud._id } },
-      //   { new: true }
-      // );
-
       return sud;
-
     },
+
+    editSud: async (
+      _parent,
+      { sudId, title, description, ingredients, steps, username }
+    ) => {
+      const updatedSud = await Sud.findByIdAndUpdate(
+        { _id: sudId },
+        {
+          title: title,
+          description: description,
+          ingredients: ingredients,
+          steps: steps,
+          username: username,
+        },
+        { new: true }
+      )
+      return updatedSud;
+    }
   },
 };
 

@@ -43,7 +43,14 @@ const typeDefs = gql`
       steps: String!
       username: String!
     ): Sud
-    editSud(sudId: ID!, sudText: String!, username: String!): Sud
+    editSud(
+      title: String!
+      description: String!
+      ingredients: String!
+      steps: String!
+      username: String!
+      sudId: ID!
+    ): Sud
   }
 `;
 
