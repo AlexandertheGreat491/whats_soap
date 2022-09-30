@@ -3,16 +3,8 @@ import { useParams, useNavigate } from 'react-router-dom';
 import { QUERY_SUD } from "../utils/queries";
 import { EDIT_SUD } from "../utils/mutations";
 import { useQuery, useMutation } from '@apollo/client';
-import Auth from '../utils/auth';
-
 
 function EditSud(props) {
-    const {
-        options = [],
-        setOption,
-        currentOption,
-    } = props;
-
     const { id: sudId } = useParams();
     const { data } = useQuery(QUERY_SUD, {
         variables: { id: sudId }
@@ -45,7 +37,7 @@ function EditSud(props) {
         setUsername(event.target.value);
     };
 
-    const [editSud, { error }] = useMutation(EDIT_SUD, {
+    const [editSud] = useMutation(EDIT_SUD, {
         update(cache, { data: { addSud } }) {
             const { suds } = cache.readQuery({ query: EDIT_SUD });
             cache.writeQuery({

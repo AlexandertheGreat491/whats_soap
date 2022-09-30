@@ -13,7 +13,7 @@ function SingleSud() {
 
     const recipe = data?.sud || [];
 
-    const [deleteSud, { error }] = useMutation(DELETE_SUD, {
+    const [deleteSud] = useMutation(DELETE_SUD, {
         update(cache, { data: { addSud } }) {
             const { suds } = cache.readQuery({ query: DELETE_SUD });
             cache.writeQuery({
