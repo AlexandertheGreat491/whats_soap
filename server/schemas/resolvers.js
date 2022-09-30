@@ -69,10 +69,18 @@ const resolvers = {
     },
 
     // next to test
-    addSud: async (_parent, args, context) => {
+    addSud: async (
+      _parent,
+      { title, description, ingredients, steps },
+      context
+    ) => {
       if (context.user) {
         const sud = await Sud.create({
-          ...args,
+          title: title,
+          description: description,
+          ingredients: ingredients,
+          steps: steps,
+          createdAt: Date.now(),
           username: context.user.username,
         });
 
