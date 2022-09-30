@@ -3,7 +3,13 @@ import { QUERY_SUDS } from "../../utils/queries";
 import { ADD_SUD } from "../../utils/mutations";
 import { useMutation } from '@apollo/client';
 
-function AddSud() {
+function AddSud(props) {
+    const {
+        options = [],
+        setOption,
+        currentOption,
+    } = props;
+
     const [title, setTitle] = useState('');
     const titleChange = event => {
         setTitle(event.target.value);
@@ -40,28 +46,29 @@ function AddSud() {
     });
 
     const handleFormSubmit = async (event) => {
-        event.preventDefault();
-        console.log("before await");
 
-        await addSud({
-            variables: {
-                title,
-                description,
-                ingredients,
-                steps,
-                username
-            }
-        });
-        console.log("inside await");
+
+        try {
+            await addSud({
+                variables: {
+                    title,
+                    description,
+                    ingredients,
+                    steps,
+                    username
+                }
+            });
+        } catch (e) {
+            console.error(e);
+        }
         setTitle('');
         setDescription('');
         setIngredients('');
         setSteps('');
         setUsername('');
-
-
-
-        console.log("after await");
+        console.log("before setoptions");
+        setOption(options[0]);
+        console.log("after setoption");
     };
 
     return (

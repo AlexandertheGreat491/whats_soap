@@ -8,7 +8,8 @@ import Auth from '../utils/auth'
 const Home = (props) => {
     const {
         options = [],
-        currentOption
+        setOption,
+        currentOption,
     } = props;
 
 
@@ -17,7 +18,9 @@ const Home = (props) => {
 
     return (
         <div>
-            {currentOption === options[1] && <AddSud />}
+            {currentOption === options[1] && <AddSud options={options}
+                setOption={setOption}
+                currentOption={currentOption} />}
             {currentOption === options[0] && <Suds recipes={recipes} />}
         </div>
     );

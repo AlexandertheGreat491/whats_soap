@@ -6,7 +6,8 @@ const Header = (props) => {
 
   const {
     options = [],
-    setOption
+    setOption,
+    currentOption,
   } = props;
 
   const logout = event => {
