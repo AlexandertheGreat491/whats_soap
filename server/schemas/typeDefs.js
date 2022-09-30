@@ -12,9 +12,8 @@ const typeDefs = gql`
     _id: ID
     title: String
     description: String
-    image: String
-    ingredients: [String]
-    steps: [String]
+    ingredients: String
+    steps: String
     createdAt: String
     username: String
     sudreactions: [SudReaction]
@@ -45,7 +44,13 @@ const typeDefs = gql`
   type Mutation {
     login(email: String!, password: String!): Auth
     addUser(username: String!, email: String!, password: String!): Auth
-    addSud(sudBody: String!, username: String!, description: String!): Sud
+    addSud(
+      title: String!
+      description: String!
+      ingredients: String!
+      steps: String!
+      username: String!
+    ): Sud
     addsudReaction(sudId: ID!, sudreactionBody: String!, username: String!): Sud
     editSud(sudId: ID!, sudText: String!, username: String!): Sud
   }

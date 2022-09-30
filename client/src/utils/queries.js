@@ -7,7 +7,6 @@ export const QUERY_SUDS = gql`
           _id
           title
           description
-          image
           ingredients
           steps
           createdAt
@@ -28,7 +27,6 @@ query Query($id: ID!) {
       _id
       title
       description
-      image
       ingredients
       steps
       createdAt
