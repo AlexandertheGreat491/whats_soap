@@ -14,13 +14,13 @@ function AddSud() {
         setDescription(event.target.value);
     };
 
-    const [sudIngredients, setIngredients] = useState([]);
-    const ingredientsChange = event => {
+    const [sudIngredients, setIngredients] = useState('');
+    const ingredientChange = event => {
         setIngredients(event.target.value);
     };
 
     const [sudSteps, setSteps] = useState([]);
-    const stepsChange = event => {
+    const stepChange = event => {
         setSteps(event.target.value);
     };
 
@@ -51,19 +51,6 @@ function AddSud() {
         }
     };
 
-    const [ingredientCounter, setIngredientCounter] = useState(1);
-    const addIngredient = (event) => {
-        event.preventDefault();
-        setIngredientCounter(ingredientCounter + 1);
-        console.log(ingredientCounter);
-    };
-
-    const [stepCounter, setStepCounter] = useState(1);
-    const addStep = (event) => {
-        event.preventDefault();
-        setStepCounter(stepCounter + 1);
-        console.log(stepCounter);
-    };
 
     return (
         <div>
@@ -71,38 +58,24 @@ function AddSud() {
             <form onSubmit={handleFormSubmit}>
                 <p>Title: </p>
                 <input placeholder="Title"
-                    defaultValue={sudTitle}
+                    value={sudTitle}
                     onChange={titleChange}></input>
                 <br></br>
                 <p>Description: </p>
-                <input placeholder="Description"
-                    defaultValue={sudDescription}
-                    onChange={descriptionChange}></input>
-                <div><p>Ingredients: </p>
-                    {Array.from(Array(ingredientCounter)).map((c, index) => {
-                        return <div key={c}>
-                            <input
-                                type="text"
-                                placeholder="ingredient"
-                            ></input>
-                            <br></br>
-                        </div>;
-                    })}
-                    <br></br>
-                    <button
-                        onClick={addIngredient}>+</button>
-                </div>
-                <div><p>Steps: </p>
-                    {Array.from(Array(stepCounter)).map((c, index) => {
-                        return <div key={c}>
-                            <input type="text" placeholder="step" ></input>
-                            <br></br>
-                        </div>;
-                    })}
-                    <br></br>
-                    <button
-                        onClick={addStep}>+</button>
-                </div>
+                <textarea placeholder="Description"
+                    value={sudDescription}
+                    onChange={descriptionChange}></textarea>
+                <p>Ingredients: </p>
+                <textarea
+                    placeholder="Ingredients"
+                    value={sudIngredients}
+                    onChange={ingredientChange}></textarea>
+                <br></br>
+                <p>Steps: </p>
+                <textarea
+                    placeholder="Steps"
+                    value={sudSteps}
+                    onChange={stepChange} ></textarea>
                 <br></br>
                 <button>Submit</button>
             </form>
