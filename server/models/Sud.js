@@ -16,14 +16,11 @@ const sudSchema = new Schema(
       minlength: 1,
       // maxlength: 280,
     },
-    image: {
+    ingredients: {
       type: String,
     },
-    ingredients: {
-      type: [String],
-    },
     steps: {
-      type: [String],
+      type: String,
     },
     createdAt: {
       type: Date,
