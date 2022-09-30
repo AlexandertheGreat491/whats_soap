@@ -71,29 +71,26 @@ const resolvers = {
     // next to test
     addSud: async (
       _parent,
-      { title, description, ingredients, steps },
-      context
+      { title, description, ingredients, steps, username }
     ) => {
-      if (context.user) {
-        const sud = await Sud.create({
-          title: title,
-          description: description,
-          ingredients: ingredients,
-          steps: steps,
-          createdAt: Date.now(),
-          username: context.user.username,
-        });
 
-        await User.findByIdAndUpdate(
-          { _id: context.user._id },
-          { $push: { sud: sud._id } },
-          { new: true }
-        );
+      const sud = await Sud.create({
+        title: title,
+        description: description,
+        ingredients: ingredients,
+        steps: steps,
+        createdAt: Date.now(),
+        username: username,
+      });
 
-        return sud;
-      }
+      // await User.findByIdAndUpdate(
+      //   { _id: "6336555332d03ddc3146bbfa" },
+      //   { $push: { sud: sud._id } },
+      //   { new: true }
+      // );
 
-      throw new AuthenticationError("You need to be logged in!");
+      return sud;
+
     },
 
     // this works on remove context and change to the user string

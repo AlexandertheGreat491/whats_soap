@@ -4,24 +4,29 @@ import { ADD_SUD } from "../../utils/mutations";
 import { useMutation } from '@apollo/client';
 
 function AddSud() {
-    const [sudTitle, setTitle] = useState('');
+    const [title, setTitle] = useState('');
     const titleChange = event => {
         setTitle(event.target.value);
     };
 
-    const [sudDescription, setDescription] = useState('');
+    const [description, setDescription] = useState('');
     const descriptionChange = event => {
         setDescription(event.target.value);
     };
 
-    const [sudIngredients, setIngredients] = useState('');
+    const [ingredients, setIngredients] = useState('');
     const ingredientChange = event => {
         setIngredients(event.target.value);
     };
 
-    const [sudSteps, setSteps] = useState([]);
+    const [steps, setSteps] = useState('');
     const stepChange = event => {
         setSteps(event.target.value);
+    };
+
+    const [username, setUsername] = useState('');
+    const nameChange = event => {
+        setUsername(event.target.value);
     };
 
     const [addSud, { error }] = useMutation(ADD_SUD, {
@@ -30,25 +35,33 @@ function AddSud() {
             cache.writeQuery({
                 query: QUERY_SUDS,
                 data: { suds: [addSud, ...suds] }
-            })
+            });
         }
     });
 
     const handleFormSubmit = async (event) => {
         event.preventDefault();
+        console.log("before await");
 
-        try {
-            await addSud({
-                variables: {
-                    sudTitle,
-                    sudDescription,
-                    sudIngredients,
-                    sudSteps
-                }
-            });
-        } catch (e) {
-            console.error(e);
-        }
+        await addSud({
+            variables: {
+                title,
+                description,
+                ingredients,
+                steps,
+                username
+            }
+        });
+        console.log("inside await");
+        setTitle('');
+        setDescription('');
+        setIngredients('');
+        setSteps('');
+        setUsername('');
+
+
+
+        console.log("after await");
     };
 
     return (
@@ -57,24 +70,29 @@ function AddSud() {
             <form onSubmit={handleFormSubmit}>
                 <p>Title: </p>
                 <input placeholder="Title"
-                    value={sudTitle}
+                    value={title}
                     onChange={titleChange}></input>
                 <br></br>
                 <p>Description: </p>
                 <textarea placeholder="Description"
-                    value={sudDescription}
+                    value={description}
                     onChange={descriptionChange}></textarea>
                 <p>Ingredients: </p>
                 <textarea
                     placeholder="Ingredients"
-                    value={sudIngredients}
+                    value={ingredients}
                     onChange={ingredientChange}></textarea>
                 <br></br>
                 <p>Steps: </p>
                 <textarea
                     placeholder="Steps"
-                    value={sudSteps}
+                    value={steps}
                     onChange={stepChange} ></textarea>
+                <br></br>
+                <p>Name: </p>
+                <input placeholder="username"
+                    value={username}
+                    onChange={nameChange}></input>
                 <br></br>
                 <button>Submit</button>
             </form>

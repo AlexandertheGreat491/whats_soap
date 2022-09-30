@@ -32,16 +32,16 @@ mutation addUser(
 `;
 
 export const ADD_SUD = gql`
-mutation addSud(
-    $sudText: String!
-    $createdAt: Date!
-    $username: String!
-) {
-    addSud(
-        sudText: $sudText
-        createdAt: $createdAt
-        username: $username
-    )
+mutation Mutation($title: String!, $description: String!, $ingredients: String!, $steps: String!, $username: String!) {
+  addSud(title: $title, description: $description, ingredients: $ingredients, steps: $steps, username: $username) {
+    _id
+    title
+    description
+    ingredients
+    steps
+    createdAt
+    username
+  }
 }`;
 
 //this one is broken
