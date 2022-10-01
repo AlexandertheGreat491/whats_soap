@@ -68,9 +68,9 @@ function AddSud(props) {
     };
 
     return (
-        <div id="sudadd" className="card d-flex flex-row justify-content-center">
+        <div id="sudadd" className="card justify-content-center p-2 container">
+            <form className="m-2"  onSubmit={handleFormSubmit}>
             <h2 id="add" style={{color:'brown'}} className="me-4">Add a Sud:</h2>
-            <form onSubmit={handleFormSubmit}>
                 <p style={{color:'brown'}} id="sudtitle">Title: </p>
                 <input placeholder="Title"
                     value={title}

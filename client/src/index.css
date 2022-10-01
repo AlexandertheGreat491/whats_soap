@@ -57,6 +57,7 @@ nav a {
   border: 0.1875em groove var(--secondary);
   border-radius: 0.3125em;
   background-color: var(--quaternary);
+  color: var(--tertiary);
 }
 
 .buttons:hover {
@@ -142,6 +143,7 @@ footer a {
   background-color: var(--secondary);
   position: relative;
   border: 0.1875em groove var(--background);
+  width: fit-content;
 }
 
 #sudtitle, #suddes, #sudi, #sudss, #sudsname {
