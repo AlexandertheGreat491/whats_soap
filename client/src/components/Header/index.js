@@ -19,14 +19,14 @@ const Header = (props) => {
     <header className='pb-3'>
       <div>
         <Link to="/">
-          <h1 className='tertiary'>What's Soap?</h1>
+          <img src="/images/whats-soap-w-background-removed.png" alt="What's Soap?"></img>
         </Link>
 
         <nav className="text-center container">
           {Auth.loggedIn() ? (
             <>
               <Link to="/profile">Me</Link>
-              <a  href="/" onClick={logout}>
+              <a href="/" onClick={logout}>
                 Logout
               </a>
 
@@ -41,7 +41,7 @@ const Header = (props) => {
             </>
           ) : (
             <>
-              <Link  className='m-3 p-1 buttons' to="/login">Login</Link>
+              <Link className='m-3 p-1 buttons' to="/login">Login</Link>
               <Link className=' p-1 buttons' to="/signup">Signup</Link>
             </>
           )}
