@@ -1,24 +1,88 @@
-import logo from './logo.svg';
-import './App.css';
+import React, { useState } from "react";
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import "./App.css";
+
+import {
+  ApolloClient,
+  InMemoryCache,
+  ApolloProvider,
+  createHttpLink,
+} from "@apollo/client";
+import { setContext } from "@apollo/client/link/context";
+
+import NoMatch from "./pages/NoMatch";
+import Home from "./pages/Home";
+import Header from "./components/Header";
+import LoginForm from "./pages/LoginForm";
+import SignUpForm from "./pages/SignUpForm";
+import Footer from "./components/Footer";
+import SingleSud from "./pages/SingleSud";
+import EditSud from "./pages/EditSud";
+
+const httpLink = createHttpLink({
+  uri: "/graphql",
+});
+
+const authLink = setContext((_, { headers }) => {
+  const token = localStorage.getItem("id_token");
+  return {
+    headers: {
+      ...headers,
+      authorization: token ? `Bearer $(token)` : "",
+    },
+  };
+});
+
+const client = new ApolloClient({
+  link: authLink.concat(httpLink),
+  cache: new InMemoryCache(),
+});
 
 function App() {
+  const [options] = useState([{ name: "View Suds" }, { name: "Add" }]);
+  const [currentOption, setOption] = useState(options[0]);
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <ApolloProvider client={client}>
+      <Router>
+        <div>
+          <Header
+            options={options}
+            setOption={setOption}
+            currentOption={currentOption}
+          />
+          <div id="main" className="mb-4">
+            <Routes>
+              <Route
+                path="/"
+                element={
+                  <Home
+                    options={options}
+                    setOption={setOption}
+                    currentOption={currentOption}
+                  />
+                }
+              />
+              <Route path="/login" element={<LoginForm />} />
+              <Route path="/signup" element={<SignUpForm />} />
+              <Route path="/sud/:id" element={<SingleSud />} />
+              <Route
+                path="/edit/:id"
+                element={
+                  <EditSud
+                    options={options}
+                    setOption={setOption}
+                    currentOption={currentOption}
+                  />
+                }
+              />
+              <Route path="*" element={<NoMatch />} />
+            </Routes>
+          </div>
+          <Footer />
+        </div>
+      </Router>
+    </ApolloProvider>
   );
 }
 

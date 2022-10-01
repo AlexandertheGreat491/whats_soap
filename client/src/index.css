@@ -1,3 +1,4 @@
+/* general styling */
 body {
   margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
@@ -10,4 +11,139 @@ body {
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
+}
+
+/*color pallet taken from https://coolors.co/565656-b2ffa9-ff4a1c-81523f-3f2a2b*/
+:root {
+  --primary: hsla(0, 0%, 34%, 1); /*davys-grey*/
+  --secondary: hsla(114, 100%, 83%, 1); /*mint-green*/
+  --tertiary: hsla(12, 100%, 55%, 1); /*red-orange-color-wheel*/
+  --quaternary: hsla(17, 34%, 38%, 1); /*coffee*/
+  --background: hsla(357, 20%, 21%, 1); /*old-burgundy*/
+}
+
+*{
+  font-family: 'Roboto', sans-serif;
+}
+
+/*header styling */
+header {
+  background-color: var(--primary);
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  width: 100%;
+}
+
+header h1 {
+  font-family: 'Roboto', sans-serif;
+  font-size: 2.5em;
+}
+
+header a {
+  text-decoration: none;
+}
+
+/* nav styling */
+.tertiary {
+  color: var(--tertiary);
+}
+
+nav a {
+  color: var(--tertiary);
+}
+
+.buttons {
+  border: 0.1875em groove var(--secondary);
+  border-radius: 0.3125em;
+  background-color: var(--quaternary);
+}
+
+.buttons:hover {
+  color: #e60000;
+}
+
+/*card styling */
+#card {
+  background-color: var(--secondary);
+  border: 0.1875em groove var(--background);
+}
+
+.card h2 {
+  font-size: 1.25em;
+  color: var(--background);
+}
+
+.card a {
+  text-decoration: none;
+}
+
+#description, #timestamp {
+  font-size: 0.9375em;
+}
+
+#main {
+  background-color: var(--quaternary);
+  height: 100em;
+}
+
+/* footer styling */
+footer {
+  background-color: var(--primary);
+  color: var(--tertiary);
+  font-size: 0.875em;
+  display: flex;
+  justify-content: center;
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+}
+
+footer a {
+  color: var(--tertiary);
+}
+
+/* LoginForm styling */
+
+#login {
+  background-color: var(--secondary);
+  position: relative;
+  border: 0.1875em groove var(--background);
+}
+
+#login-text {
+  font-size: 1.25em;
+  font-weight: 700;
+  color: var(--background);
+  font-size: 1.25em;
+}
+
+#submit {
+  border: 0.1875em groove var(--primary);
+  border-radius: 0.3125em;
+  background-color: var(--tertiary);
+  color: var(--background);
+}
+
+#signup {
+  background-color: var(--secondary);
+  position: relative;
+  border: 0.1875em groove var(--background);
+}
+
+#add {
+  font-size: 1.25em;
+  font-weight: 700;
+  text-decoration: underline;
+}
+
+#sudadd {
+  background-color: var(--secondary);
+  position: relative;
+  border: 0.1875em groove var(--background);
+}
+
+#sudtitle, #suddes, #sudi, #sudss, #sudsname {
+  font-size: 0.9375em;
 }
