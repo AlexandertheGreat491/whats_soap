@@ -19,7 +19,6 @@ import Footer from "./components/Footer";
 import SingleSud from "./pages/SingleSud";
 import EditSud from "./pages/EditSud";
 
-
 const httpLink = createHttpLink({
   uri: "/graphql",
 });
@@ -39,32 +38,44 @@ const client = new ApolloClient({
   cache: new InMemoryCache(),
 });
 
-
 function App() {
-  const [options] = useState([
-    { name: "View Suds" },
-    { name: "Add" }
-  ]);
+  const [options] = useState([{ name: "View Suds" }, { name: "Add" }]);
   const [currentOption, setOption] = useState(options[0]);
 
   return (
     <ApolloProvider client={client}>
       <Router>
         <div>
-          <Header options={options}
+          <Header
+            options={options}
             setOption={setOption}
-            currentOption={currentOption} />
-          <div id="main">
+            currentOption={currentOption}
+          />
+          <div id="main" className="mb-4">
             <Routes>
-              <Route path="/" element={<Home options={options}
-                setOption={setOption}
-                currentOption={currentOption} />} />
+              <Route
+                path="/"
+                element={
+                  <Home
+                    options={options}
+                    setOption={setOption}
+                    currentOption={currentOption}
+                  />
+                }
+              />
               <Route path="/login" element={<LoginForm />} />
               <Route path="/signup" element={<SignUpForm />} />
               <Route path="/sud/:id" element={<SingleSud />} />
-              <Route path="/edit/:id" element={<EditSud options={options}
-                setOption={setOption}
-                currentOption={currentOption} />} />
+              <Route
+                path="/edit/:id"
+                element={
+                  <EditSud
+                    options={options}
+                    setOption={setOption}
+                    currentOption={currentOption}
+                  />
+                }
+              />
               <Route path="*" element={<NoMatch />} />
             </Routes>
           </div>

@@ -16,10 +16,10 @@ const Header = (props) => {
   };
 
   return (
-    <header className='pb-3'>
+    <header className='col-12 d-inline-flex pb-3'>
       <div>
         <Link to="/">
-          <img src="/images/whats-soap-w-background-removed.png" alt="What's Soap?"></img>
+          <img className='d-inline-flex w-100' src="/images/whats-soap-w-background-removed.png" alt="What's Soap?"></img>
         </Link>
 
         <nav className="text-center container">

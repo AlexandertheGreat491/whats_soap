@@ -3,7 +3,7 @@ import { FaGithub } from "react-icons/fa";
 
 const Footer = () => {
     return (
-        <footer>
+        <footer className="mt-2">
             <p className="m-2">Thanks for visiting!</p>
             <p className="m-2">Check out our Github profiles:</p>
             <div className="d-inline-flex">

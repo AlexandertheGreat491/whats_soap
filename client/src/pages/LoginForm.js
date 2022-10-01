@@ -44,7 +44,7 @@ const LoginForm = (props) => {
 
   return (
     <main className="d-flex flex-row justify-content-center">
-      <div className="col-12 col-md-6 container">
+      <div className="col-12 col-md-6">
         <div  id='login' className="card mt-5 ms-2 me-2 mb-5">
           <h4 id="login-text" style={{color:'brown'}} className="card-header">Login</h4>
           <div className="card-body">
@@ -69,7 +69,7 @@ const LoginForm = (props) => {
                 value={formState.password}
                 onChange={handleChange}
                 />
-                <button id="submit" style={{color:'black'}} className="btn d-block m-2" type="submit">
+                <button id="submit" style={{color:'black'}} className="btn d-block mt-2 me-2 mb-2" type="submit">
                     Submit
                 </button>
             </form>
