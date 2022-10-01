@@ -7,10 +7,10 @@ function Suds({ recipes }) {
         <div className='p-3'>
             {/* map over recipes */}
             {recipes.map((recipe) => (
-                <div id='card' className='card p-2 m-1' key={recipe._id}>
+                <div id='card' className='card p-2 m-1 d-inline-flex' key={recipe._id}>
                     <Link to={`/sud/${recipe._id}`}><h2>{recipe.title}</h2></Link>
-                    <p>{recipe.description}</p>
-                    <p>posted by {recipe.username} on {recipe.createdAt}</p>
+                    <p id='description'>{recipe.description}</p>
+                    <p id='timestamp'>posted by {recipe.username} on {recipe.createdAt}</p>
                 </div>
             ))}
         </div>

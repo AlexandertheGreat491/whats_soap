@@ -42,7 +42,7 @@ const Header = (props) => {
           ) : (
             <>
               <Link className='m-3 p-1 buttons' to="/login">Login</Link>
-              <Link className=' p-1 buttons' to="/signup">Signup</Link>
+              <Link className='p-1 buttons' to="/signup">Signup</Link>
             </>
           )}
         </nav>

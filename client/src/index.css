@@ -55,11 +55,17 @@ nav a {
 .buttons {
   border: 0.1875em groove var(--secondary);
   border-radius: 0.3125em;
+  background-color: var(--quaternary);
+}
+
+.buttons:hover {
+  color: #e60000;
 }
 
 /*card styling */
 #card {
   background-color: var(--secondary);
+  border: 0.1875em groove var(--background);
 }
 
 .card h2 {
@@ -71,6 +77,10 @@ nav a {
   text-decoration: none;
 }
 
+#description, #timestamp {
+  font-size: 0.9375em;
+}
+
 #main {
   background-color: var(--quaternary) ;
 }
@@ -80,6 +90,9 @@ footer {
   background-color: var(--primary);
   color: var(--tertiary);
   font-size: 0.875em;
+  display: flex;
+  justify-content: center;
+  
 }
 
 footer a {
