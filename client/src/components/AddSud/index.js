@@ -68,36 +68,34 @@ function AddSud(props) {
     };
 
     return (
-        <div>
-            <h2>Add a Sud</h2>
+        <div id="sudadd" className="card d-flex flex-row justify-content-center">
+            <h2 id="add" style={{color:'brown'}} className="me-4">Add a Sud:</h2>
             <form onSubmit={handleFormSubmit}>
-                <p>Title: </p>
+                <p style={{color:'brown'}} id="sudtitle">Title: </p>
                 <input placeholder="Title"
                     value={title}
                     onChange={titleChange}></input>
-                <br></br>
-                <p>Description: </p>
+                <p style={{color:'brown'}} id="suddes">Description: </p>
                 <textarea placeholder="Description"
                     value={description}
                     onChange={descriptionChange}></textarea>
-                <p>Ingredients: </p>
+                <p style={{color:'brown'}} id="sudi">Ingredients: </p>
                 <textarea
                     placeholder="Ingredients"
                     value={ingredients}
                     onChange={ingredientChange}></textarea>
-                <br></br>
-                <p>Steps: </p>
+                <p style={{color:'brown'}} id="sudss">Steps: </p>
                 <textarea
                     placeholder="Steps"
                     value={steps}
                     onChange={stepChange} ></textarea>
-                <br></br>
-                <p>Name: </p>
+                
+                <p style={{color:'brown'}} id="sudsname">Name: </p>
                 <input placeholder="username"
                     value={username}
                     onChange={nameChange}></input>
                 <br></br>
-                <button>Submit</button>
+                <button id="submit" style={{color:'black'}} className="btn d-block mt-2 me-2 mb-2">Submit</button>
             </form>
         </div>
     )

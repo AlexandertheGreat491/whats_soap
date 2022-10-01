@@ -25,13 +25,13 @@ const Header = (props) => {
         <nav className="text-center container">
           {Auth.loggedIn() ? (
             <>
-              <Link to="/profile">Me</Link>
-              <a href="/" onClick={logout}>
+              <Link className='m-1' to="/profile">Me</Link>
+              <a className='m-1' href="/" onClick={logout}>
                 Logout
               </a>
 
               {options.map((option) => (
-                <button key={option.name}>
+                <button className='buttons m-1' key={option.name}>
                   <span onClick={() => setOption(option)}>
                     {option.name}
                   </span>

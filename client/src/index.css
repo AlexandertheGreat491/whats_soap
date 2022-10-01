@@ -113,7 +113,10 @@ footer a {
 }
 
 #login-text {
+  font-size: 1.25em;
+  font-weight: 700;
   color: var(--background);
+  font-size: 1.25em;
 }
 
 #submit {
@@ -129,3 +132,18 @@ footer a {
   border: 0.1875em groove var(--background);
 }
 
+#add {
+  font-size: 1.25em;
+  font-weight: 700;
+  text-decoration: underline;
+}
+
+#sudadd {
+  background-color: var(--secondary);
+  position: relative;
+  border: 0.1875em groove var(--background);
+}
+
+#sudtitle, #suddes, #sudi, #sudss, #sudsname {
+  font-size: 0.9375em;
+}
