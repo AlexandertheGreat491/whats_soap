@@ -47,8 +47,8 @@ function SingleSud() {
                     <p>posted by {recipe.username} on {recipe.createdAt}</p>
                     {Auth.loggedIn() ? (
                         <>
-                            <Link to={`/edit/${recipe._id}`}>Edit</Link>
-                            <a href="/" onClick={deleteSubmit}>Delete</a>
+                            <Link className="m-2" to={`/edit/${recipe._id}`}>Edit</Link>
+                            <a className="m-2" href="/" onClick={deleteSubmit}>Delete</a>
 
                         </>
                     ) : (
