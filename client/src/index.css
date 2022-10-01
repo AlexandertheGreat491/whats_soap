@@ -15,14 +15,19 @@ code {
 
 /*color pallet taken from https://coolors.co/565656-b2ffa9-ff4a1c-81523f-3f2a2b*/
 :root {
-  --primary: hsla(0, 0%, 34%, 1); /*davys-grey*/
-  --secondary: hsla(114, 100%, 83%, 1); /*mint-green*/
-  --tertiary: hsla(12, 100%, 55%, 1); /*red-orange-color-wheel*/
-  --quaternary: hsla(17, 34%, 38%, 1); /*coffee*/
-  --background: hsla(357, 20%, 21%, 1); /*old-burgundy*/
+  --primary: hsla(0, 0%, 34%, 1);
+  /*davys-grey*/
+  --secondary: hsla(114, 100%, 83%, 1);
+  /*mint-green*/
+  --tertiary: hsla(12, 100%, 55%, 1);
+  /*red-orange-color-wheel*/
+  --quaternary: hsla(17, 34%, 38%, 1);
+  /*coffee*/
+  --background: hsla(357, 20%, 21%, 1);
+  /*old-burgundy*/
 }
 
-*{
+* {
   font-family: 'Roboto', sans-serif;
 }
 
@@ -78,7 +83,8 @@ nav a {
   text-decoration: none;
 }
 
-#description, #timestamp {
+#description,
+#timestamp {
   font-size: 0.9375em;
 }
 
@@ -128,4 +134,3 @@ footer a {
   position: relative;
   border: 0.1875em groove var(--background);
 }
-

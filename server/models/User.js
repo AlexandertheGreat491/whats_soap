@@ -19,12 +19,12 @@ const userSchema = new Schema({
     required: true,
     minlength: 5,
   },
-  // suds: [
-  //   {
-  //     type: Schema.Types.ObjectId,
-  //     ref: 'Sud'
-  //   }
-  // ]
+  suds: [
+    {
+      type: Schema.Types.ObjectId,
+      ref: 'Sud'
+    }
+  ]
 });
 
 // set up pre-save middleware to create password

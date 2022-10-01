@@ -28,3 +28,52 @@ query Query($id: ID!) {
     }
   }`
 
+export const QUERY_SUD_USERNAME = gql`
+  query Query($username: String) {
+    suds(username: $username) {
+      _id
+      title
+      description
+      ingredients
+      steps
+      createdAt
+      username
+    }
+  }`
+
+export const QUERY_ME = gql`
+  query Me {
+    me {
+      _id
+      username
+      email
+      suds {
+        _id
+        title
+        description
+        ingredients
+        steps
+        createdAt
+        username
+      }
+    }
+  }`
+
+export const QUERY_USER = gql`
+  query Query($username: String!) {
+    user(username: $username) {
+      _id
+      username
+      email
+      suds {
+        _id
+        title
+        description
+        ingredients
+        steps
+        createdAt
+        username
+      }
+    }
+  }
+  `

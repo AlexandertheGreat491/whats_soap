@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { QUERY_SUDS } from "../../utils/queries";
+import { QUERY_SUDS, QUERY_ME } from "../../utils/queries";
 import { ADD_SUD } from "../../utils/mutations";
 import { useMutation } from '@apollo/client';
 
@@ -37,6 +37,17 @@ function AddSud(props) {
 
     const [addSud, { error }] = useMutation(ADD_SUD, {
         update(cache, { data: { addSud } }) {
+            try {
+                // update me array's cache
+                const { me } = cache.readQuery({ query: QUERY_ME });
+                cache.writeQuery({
+                    query: QUERY_ME,
+                    data: { me: { ...me, suds: [...me.suds, addSud] } },
+                });
+            } catch (e) {
+                console.warn("First sud insertion by user!")
+            }
+
             const { suds } = cache.readQuery({ query: QUERY_SUDS });
             cache.writeQuery({
                 query: QUERY_SUDS,
