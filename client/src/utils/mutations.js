@@ -35,7 +35,7 @@ mutation Mutation($title: String!, $description: String!, $ingredients: String!,
     username
     url
   }
-`;
+}`;
 
 export const EDIT_SUD = gql`
   mutation EditSud(

@@ -43,4 +43,4 @@ query Query($username: String) {
     username
     url
   }
-`;
+}`;

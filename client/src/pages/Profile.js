@@ -13,8 +13,6 @@ const Profile = () => {
 
   const recipe = data?.suds || [];
 
-  console.log(recipe);
-
   return (
     <div>
       <h2 id="profileheader">Viewing {`${username}'s`} profile</h2>

@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import { QUERY_SUDS } from "../../utils/queries";
 import { ADD_SUD } from "../../utils/mutations";
 import { useMutation } from "@apollo/client";
@@ -52,13 +52,8 @@ function AddSud(props) {
       .open(choices)
       .then(image => {
         url = image[0];
-        console.log(url);
       });
   }
-
-  useEffect(() => {
-    console.log(url);
-  }, [url]);
 
   // end cloudinary
 

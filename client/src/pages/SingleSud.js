@@ -38,23 +38,26 @@ function SingleSud() {
       {data && (
         <div id="singlecard" className="card p-2 m-3 d-inline-flex">
           <h2 id="single">{recipe.title}</h2>
+          <img className="images" src={recipe.url} alt={recipe.title}></img>
           <h3 id="des">Description</h3>
           <p className="single">{recipe.description}</p>
           <h3 id="ingredientsheader">Ingredients</h3>
           <p className="single">{recipe.ingredients}</p>
           <h3 id="instructionsheader">Instructions</h3>
           <p className="single">{recipe.steps}</p>
-          <p id="timestamp">
-            posted by {recipe.username} on {recipe.createdAt}
-          </p>
+          <p id='timestamp'>posted by
+            <Link to={`/profile/${recipe.username}`}><span className="m-2">{recipe.username}</span></Link>
+            on {recipe.createdAt}</p>
           {Auth.loggedIn() ? (
             <>
-              <Link style={{width:"5%"}} id="edit" className="ps-3 mb-1" to={`/edit/${recipe._id}`}>
-                Edit
-              </Link>
-              <a style={{width:"5%"}} id="delete" className="ps-2" href="/" onClick={deleteSubmit}>
-                Delete
-              </a>
+              <div className="d-flex">
+                <Link id="edit" className="p-2 m-1" to={`/edit/${recipe._id}`}>
+                  Edit
+                </Link>
+                <a id="delete" className="p-2 m-1" href="/" onClick={deleteSubmit}>
+                  Delete
+                </a>
+              </div>
             </>
           ) : (
             <>
