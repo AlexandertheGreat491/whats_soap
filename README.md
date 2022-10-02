@@ -25,7 +25,7 @@
 
 <b>Image running on a computer</b>
 
- ![Mainpage](https://user-images.githubusercontent.com/103293341/193467236-4207c8e3-6c39-4dff-92fa-42903526bc3e.PNG) 
+ ![Mainpage](https://user-images.githubusercontent.com/103293341/193481030-75cda666-a76c-4633-8fb3-dd483cbf89e3.PNG)
 
   ## Credits
    [bootstrap](https://www.npmjs.com/package/bootstrap)
