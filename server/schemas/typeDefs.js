@@ -17,6 +17,7 @@ const typeDefs = gql`
     steps: String
     createdAt: String
     username: String
+    url: String
   }
 
   type Auth {
@@ -42,6 +43,7 @@ const typeDefs = gql`
       ingredients: String!
       steps: String!
       username: String!
+      url: String
     ): Sud
     editSud(
       title: String!

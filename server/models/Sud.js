@@ -27,6 +27,9 @@ const sudSchema = new Schema(
     username: {
       type: String,
       required: true,
+    },
+    url: {
+      type: String
     }
   },
   {

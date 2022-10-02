@@ -2,9 +2,10 @@ import React, { useState } from "react";
 import { QUERY_SUDS } from "../../utils/queries";
 import { ADD_SUD } from "../../utils/mutations";
 import { useMutation } from "@apollo/client";
+import ReactCloudinaryUploader from "@app-masters/react-cloudinary-uploader";
 
 function AddSud(props) {
-  const { options = [], setOption, currentOption } = props;
+  const { options = [], setOption } = props;
 
   const [title, setTitle] = useState("");
   const titleChange = (event) => {
@@ -31,6 +32,33 @@ function AddSud(props) {
     setUsername(event.target.value);
   };
 
+  // cloudinary stuff for images
+
+  // OPTION 1
+  let choices = {
+    cloud_name: "oliviacm",
+    upload_preset: "ujb638tm",
+    multiple: true,
+    returnJustUrl: true
+  };
+
+  const [url, setUrl] = useState("banana");
+
+  const uploadImage = (event) => {
+    event.preventDefault();
+    ReactCloudinaryUploader.open(choices).then(image => {
+      console.log(image);
+      console.log(image[0]);
+      console.log(setUrl());
+      setUrl(image[0]);
+      console.log(url);
+    }).catch(err => {
+      console.error(err);
+    });
+  }
+
+  // end cloudinary
+
   const [addSud, { error }] = useMutation(ADD_SUD, {
     update(cache, { data: { addSud } }) {
       const { suds } = cache.readQuery({ query: QUERY_SUDS });
@@ -50,6 +78,7 @@ function AddSud(props) {
           ingredients,
           steps,
           username,
+          url
         },
       });
     } catch (e) {
@@ -65,7 +94,6 @@ function AddSud(props) {
 
   return (
     <div>
-      <br></br>
       <div id="sudadd" className="card justify-content-center p-2 container">
         <form onSubmit={handleFormSubmit}>
           <h2 id="add" style={{ color: "brown" }} className="me-4">
@@ -112,6 +140,12 @@ function AddSud(props) {
             value={username}
             onChange={nameChange}
           ></input>
+          <p>
+            Image:
+          </p>
+
+          <button onClick={uploadImage}>Upload</button>
+
           <br></br>
           <button
             id="submit"

@@ -71,7 +71,7 @@ const resolvers = {
     // next to test
     addSud: async (
       _parent,
-      { title, description, ingredients, steps, username }
+      { title, description, ingredients, steps, username, url }
     ) => {
 
       const sud = await Sud.create({
@@ -81,6 +81,7 @@ const resolvers = {
         steps: steps,
         createdAt: Date.now(),
         username: username,
+        url: url
       });
       return sud;
     },

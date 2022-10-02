@@ -41,6 +41,7 @@ mutation Mutation($title: String!, $description: String!, $ingredients: String!,
     steps
     createdAt
     username
+    url
   }
 }`;
 

@@ -1,5 +1,5 @@
 import React from "react";
-import { useParams, useNavigate } from 'react-router-dom';
+import { useParams } from 'react-router-dom';
 import { useQuery } from '@apollo/client';
 import { QUERY_SUD_USERNAME } from '../utils/queries';
 

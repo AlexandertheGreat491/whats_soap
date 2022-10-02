@@ -11,6 +11,7 @@ export const QUERY_SUDS = gql`
           steps
           createdAt
           username
+          url
         }
 }`
 
@@ -25,6 +26,7 @@ query Query($id: ID!) {
       steps
       createdAt
       username
+      url
     }
   }`
 
@@ -38,5 +40,6 @@ query Query($username: String) {
     steps
     createdAt
     username
+    url
   }
 }`
