@@ -6,12 +6,12 @@ const sudSchema = new Schema(
     title: {
       type: String,
       required: "You need to enter a title!",
-      minlength: 1
+      minlength: 1,
     },
     description: {
       type: String,
       required: "You need to enter a description!",
-      minlength: 1
+      minlength: 1,
     },
     ingredients: {
       type: String,
@@ -27,7 +27,7 @@ const sudSchema = new Schema(
     username: {
       type: String,
       required: true,
-    }
+    },
   },
   {
     toJSON: {

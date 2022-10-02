@@ -1,22 +1,23 @@
-import { gql } from '@apollo/client';
+import { gql } from "@apollo/client";
 
 // query for all suds
 export const QUERY_SUDS = gql`
-    query Query {
-        sudsFindAll {
-          _id
-          title
-          description
-          ingredients
-          steps
-          createdAt
-          username
-        }
-}`
+  query Query {
+    sudsFindAll {
+      _id
+      title
+      description
+      ingredients
+      steps
+      createdAt
+      username
+    }
+  }
+`;
 
 // query for individual sud
 export const QUERY_SUD = gql`
-query Query($id: ID!) {
+  query Query($id: ID!) {
     sud(_id: $id) {
       _id
       title
@@ -26,17 +27,19 @@ query Query($id: ID!) {
       createdAt
       username
     }
-  }`
+  }
+`;
 
 export const QUERY_SUD_USERNAME = gql`
-query Query($username: String) {
-  suds(username: $username) {
-    _id
-    title
-    description
-    ingredients
-    steps
-    createdAt
-    username
+  query Query($username: String) {
+    suds(username: $username) {
+      _id
+      title
+      description
+      ingredients
+      steps
+      createdAt
+      username
+    }
   }
-}`
+`;
