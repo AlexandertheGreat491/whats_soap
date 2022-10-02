@@ -73,7 +73,6 @@ const resolvers = {
       _parent,
       { title, description, ingredients, steps, username, url }
     ) => {
-
       const sud = await Sud.create({
         title: title,
         description: description,
@@ -101,18 +100,14 @@ const resolvers = {
           username: username,
         },
         { new: true }
-      )
+      );
       return updatedSud;
     },
 
-    deleteSud: async (
-      _parent, { sudId }
-    ) => {
-      const deletedSud = await Sud.findByIdAndDelete(
-        { _id: sudId }
-      )
+    deleteSud: async (_parent, { sudId }) => {
+      const deletedSud = await Sud.findByIdAndDelete({ _id: sudId });
       return deletedSud;
-    }
+    },
   },
 };
 

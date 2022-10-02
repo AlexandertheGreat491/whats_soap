@@ -1,4 +1,4 @@
-import { gql } from '@apollo/client';
+import { gql } from "@apollo/client";
 
 // query for all suds
 export const QUERY_SUDS = gql`
@@ -17,7 +17,7 @@ export const QUERY_SUDS = gql`
 
 // query for individual sud
 export const QUERY_SUD = gql`
-query Query($id: ID!) {
+  query Query($id: ID!) {
     sud(_id: $id) {
       _id
       title
@@ -28,7 +28,8 @@ query Query($id: ID!) {
       username
       url
     }
-  }`
+  }
+`;
 
 export const QUERY_SUD_USERNAME = gql`
 query Query($username: String) {
@@ -42,4 +43,4 @@ query Query($username: String) {
     username
     url
   }
-}`
+`;

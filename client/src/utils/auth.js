@@ -45,9 +45,9 @@ class AuthService {
   // clears token from localStorage and force logout with reload
   logout() {
     // clears user token and profile data from localStorage
-    localStorage.removeItem('id_token');
+    localStorage.removeItem("id_token");
     // reloads the page and resets the state of the application
-    window.location.assign('/');
+    window.location.assign("/");
   }
 }
 
