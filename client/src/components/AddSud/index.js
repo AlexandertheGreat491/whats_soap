@@ -42,8 +42,9 @@ function AddSud(props) {
     returnJustUrl: true
   };
 
-  // const [url, setUrl] = useState("banana");
-  var url = "apple";
+  const [isUploaded, setUploaded] = useState(false);
+
+  var url = "";
 
   const uploadImage = (event) => {
     event.preventDefault();
@@ -52,6 +53,7 @@ function AddSud(props) {
       .open(choices)
       .then(image => {
         url = image[0];
+        setUploaded(true);
       });
   }
 
@@ -101,7 +103,6 @@ function AddSud(props) {
             Add a Sud:
           </h2>
           <table>
-
             <tr>
               <th><p style={{ color: "brown" }}
                 className="m-2"
@@ -115,7 +116,6 @@ function AddSud(props) {
                 onChange={titleChange}
               ></input></th>
             </tr>
-
             <tr>
               <th><p style={{ color: "brown" }} id="suddes" className="m-2">
                 Description:
@@ -127,7 +127,6 @@ function AddSud(props) {
                 className="m-2"
               ></textarea></th>
             </tr>
-
             <tr>
               <th><p style={{ color: "brown" }} id="sudi" className="m-2">
                 Ingredients:
@@ -139,7 +138,6 @@ function AddSud(props) {
                 className="m-2"
               ></textarea></th>
             </tr>
-
             <tr>
               <th><p style={{ color: "brown" }} id="sudss" className="m-2">
                 Steps:
@@ -151,8 +149,6 @@ function AddSud(props) {
                 className="m-2"
               ></textarea></th>
             </tr>
-
-
             <tr>
               <th><p style={{ color: "brown" }} id="sudsname" className="m-2">
                 Name:
@@ -164,18 +160,15 @@ function AddSud(props) {
                 className="m-2"
               ></input></th>
             </tr>
-
-
           </table>
-
           <div className="d-flex">
             <br></br>
             <button id="upload"
               style={{ color: "black" }}
               className="btn d-block m-2"
               onClick={uploadImage}>Upload Image</button>
+            {isUploaded && <span className="mt-3 ms-3" style={{ color: "brown" }}>Image uploaded!</span>}
           </div>
-
           <button
             id="submit"
             style={{ color: "black" }}
