@@ -87,7 +87,7 @@ const resolvers = {
 
     editSud: async (
       _parent,
-      { sudId, title, description, ingredients, steps, username }
+      { sudId, title, description, ingredients, steps, username, url }
     ) => {
       const updatedSud = await Sud.findByIdAndUpdate(
         { _id: sudId },
@@ -98,6 +98,7 @@ const resolvers = {
           steps: steps,
           createdAt: Date.now(),
           username: username,
+          url: url
         },
         { new: true }
       );

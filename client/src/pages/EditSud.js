@@ -3,6 +3,7 @@ import { useParams, useNavigate } from "react-router-dom";
 import { QUERY_SUD } from "../utils/queries";
 import { EDIT_SUD } from "../utils/mutations";
 import { useQuery, useMutation } from "@apollo/client";
+import ReactCloudinaryUploader from "@app-masters/react-cloudinary-uploader";
 
 function EditSud(props) {
   const { id: sudId } = useParams();
@@ -37,8 +38,33 @@ function EditSud(props) {
     setUsername(event.target.value);
   };
 
+  // cloudinary stuff for images
+
+  // OPTION 1
+  let choices = {
+    cloud_name: "oliviacm",
+    upload_preset: "ujb638tm",
+    multiple: true,
+    returnJustUrl: true
+  };
+
+  // const [url, setUrl] = useState("banana");
+  var url = "apple";
+
+  const uploadImage = (event) => {
+    event.preventDefault();
+
+    ReactCloudinaryUploader
+      .open(choices)
+      .then(image => {
+        url = image[0];
+      });
+  }
+
+  // end cloudinary
+
   const [editSud] = useMutation(EDIT_SUD, {
-    update(cache, { data: { addSud } }) {
+    update(cache, { data: { editSud } }) {
       const { suds } = cache.readQuery({ query: EDIT_SUD });
       cache.writeQuery({
         query: EDIT_SUD,
@@ -59,6 +85,7 @@ function EditSud(props) {
           steps,
           username,
           sudId,
+          url
         },
       });
     } catch (e) {
@@ -107,6 +134,11 @@ function EditSud(props) {
               onChange={nameChange}
             ></input>
             <br></br>
+            <p>
+              Image:
+            </p>
+
+            <button onClick={uploadImage}>Upload</button>
             <button>Submit</button>
           </form>
         </div>

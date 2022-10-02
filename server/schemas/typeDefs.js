@@ -52,6 +52,7 @@ const typeDefs = gql`
       steps: String!
       username: String!
       sudId: ID!
+      url: String
     ): Sud
     deleteSud(sudId: ID!): Sud
   }

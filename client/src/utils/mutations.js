@@ -38,31 +38,18 @@ mutation Mutation($title: String!, $description: String!, $ingredients: String!,
 }`;
 
 export const EDIT_SUD = gql`
-  mutation EditSud(
-    $title: String!
-    $description: String!
-    $ingredients: String!
-    $steps: String!
-    $username: String!
-    $sudId: ID!
-  ) {
-    editSud(
-      title: $title
-      description: $description
-      ingredients: $ingredients
-      steps: $steps
-      username: $username
-      sudId: $sudId
-    ) {
-      _id
-      title
-      description
-      ingredients
-      steps
-      createdAt
-      username
-    }
+mutation Mutation($title: String!, $description: String!, $ingredients: String!, $steps: String!, $username: String!, $sudId: ID!, $url: String) {
+  editSud(title: $title, description: $description, ingredients: $ingredients, steps: $steps, username: $username, sudId: $sudId, url: $url) {
+    _id
+    title
+    description
+    ingredients
+    steps
+    createdAt
+    username
+    url
   }
+}
 `;
 
 export const DELETE_SUD = gql`
