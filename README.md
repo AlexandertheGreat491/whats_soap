@@ -3,7 +3,8 @@
 
   ## Description
 
-  A site for displaying your favorite soap recipes. You can create a user to save soap recipes.
+  A site for displaying your favorite soap recipes. You can create a user to save and edit soap recipes.
+
   ## Table of Contents
   * [Installation](#installation)
   * [Usage](#usage)
@@ -13,7 +14,7 @@
   
   ## Installation
 
-  Clone from repo and run 'npm run install' from the root directory, then run 'npm i concurrently'.
+  Clone from repo and run `npm run install` from the root directory, then run `npm i concurrently`.
 
   ## Usage
 
@@ -62,6 +63,10 @@
    [Mongoose Queries](https://mongoosejs.com/docs/queries.html)
 
    [Mutations and Input Types](https://graphql.org/graphql-js/mutations-and-input-types/)
+
+   [Uploading with Cloudinary](https://medium.com/geekculture/how-to-upload-images-to-cloudinary-with-a-react-app-f0dcc357999c)
+
+   [React-Cloudinary](https://www.npmjs.com/package/@app-masters/react-cloudinary-uploader)
 
   ## Questions
   
