@@ -28,3 +28,15 @@ query Query($id: ID!) {
     }
   }`
 
+export const QUERY_SUD_USERNAME = gql`
+query Query($username: String) {
+  suds(username: $username) {
+    _id
+    title
+    description
+    ingredients
+    steps
+    createdAt
+    username
+  }
+}`

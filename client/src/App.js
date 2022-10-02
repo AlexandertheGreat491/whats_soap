@@ -18,6 +18,7 @@ import SignUpForm from "./pages/SignUpForm";
 import Footer from "./components/Footer";
 import SingleSud from "./pages/SingleSud";
 import EditSud from "./pages/EditSud";
+import Profile from "./pages/Profile";
 
 const httpLink = createHttpLink({
   uri: "/graphql",
@@ -76,6 +77,7 @@ function App() {
                   />
                 }
               />
+              <Route path="/profile/:username" element={<Profile />} />
               <Route path="*" element={<NoMatch />} />
             </Routes>
           </div>
