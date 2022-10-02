@@ -18,7 +18,7 @@
 
 <b>Image running on a computer</b>
 
- ![screenshot1](./src/assets/images/Mainpage.PNG) |
+ ![screenshot1](![Mainpage](https://user-images.githubusercontent.com/103293341/193467236-4207c8e3-6c39-4dff-92fa-42903526bc3e.PNG) |
   ## Credits
    [bootstrap](https://www.npmjs.com/package/bootstrap)
 
