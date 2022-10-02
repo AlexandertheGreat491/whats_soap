@@ -11,10 +11,15 @@
   ## Installation
   Clone from repo and run 'npm run install' from the root directory, then run 'npm i concurrently'.
   ## Usage
-  Navigate to: 
+  Navigate to: https://whats-soap.herokuapp.com/
   Create a user and start adding soap recipes.
   ## License
   ### This app is licensed under the [MIT](https://opensource.org/licenses/MIT) license.
+  ## Screenshots
+
+|                <b>Image running on a computer</b>                 |
+| :---------------------------------------------------------------: |
+| ![space-1.jpg](./src/assets/images/screenshots/Screenshotweb.jpg) |
   ## Credits
    [bootstrap](https://www.npmjs.com/package/bootstrap)
 
