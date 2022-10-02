@@ -44,48 +44,46 @@ const LoginForm = (props) => {
 
   return (
     <main className="d-flex flex-row justify-content-center">
-      <div className="col-12 col-md-6">
-        <div id="login" className="card mt-5 ms-2 me-2 mb-5">
-          <h4
-            id="login-text"
-            style={{ color: "brown" }}
-            className="card-header"
-          >
-            Login
-          </h4>
-          <div className="card-body">
-            <form onSubmit={handleFormSubmit}>
-              <input
-                className="form-input me-1"
-                autoComplete="email"
-                placeholder="Your email"
-                name="email"
-                type="email"
-                id="email"
-                value={formState.email}
-                onChange={handleChange}
-              />
-              <input
-                className="form-input"
-                autoComplete="current-password"
-                placeholder="******"
-                name="password"
-                type="password"
-                id="password"
-                value={formState.password}
-                onChange={handleChange}
-              />
-              <button
-                id="submit"
-                style={{ color: "black" }}
-                className="btn d-block mt-2 me-2 mb-2"
-                type="submit"
-              >
-                Submit
-              </button>
-            </form>
-            {error && <div>Login failed</div>}
-          </div>
+      <div id="login" className="card m-5">
+        <h4
+          id="login-text"
+          style={{ color: "brown" }}
+          className="card-header"
+        >
+          Login
+        </h4>
+        <div className="card-body">
+          <form onSubmit={handleFormSubmit}>
+            <input
+              className="form-input m-1"
+              autoComplete="email"
+              placeholder="Your email"
+              name="email"
+              type="email"
+              id="email"
+              value={formState.email}
+              onChange={handleChange}
+            />
+            <input
+              className="form-input m-1"
+              autoComplete="current-password"
+              placeholder="******"
+              name="password"
+              type="password"
+              id="password"
+              value={formState.password}
+              onChange={handleChange}
+            />
+            <button
+              id="submit"
+              style={{ color: "black" }}
+              className="btn d-block m-1"
+              type="submit"
+            >
+              Submit
+            </button>
+          </form>
+          {error && <div>Login failed</div>}
         </div>
       </div>
     </main>

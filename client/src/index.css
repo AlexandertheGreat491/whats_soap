@@ -41,7 +41,7 @@ header {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
-  width: 100%;
+  max-width: 100%;
 }
 
 header h1 {
@@ -96,6 +96,11 @@ nav a {
 
 #main {
   background-color: var(--quaternary);
+  margin-bottom: 100px;
+}
+
+.orange-name {
+  color: var(--tertiary);
 }
 
 /* footer styling */
@@ -129,8 +134,17 @@ footer a {
   color: var(--background);
 }
 
+#login,
+#signup {
+  width: 300px;
+  justify-content: center;
+}
+
 /* used to apply styling to all submit buttons */
-#submit {
+#submit,
+#upload,
+#submitedit,
+#uploadedit {
   border: 0.1875em groove var(--primary);
   border-radius: 0.3125em;
   background-color: var(--tertiary);
@@ -150,25 +164,49 @@ footer a {
 }
 
 /* Add sud styling */
-#add {
+#add,
+#sud-edit {
   font-size: 1.25em;
   font-weight: 700;
   text-decoration: underline;
 }
 
-#sudadd {
+#sudadd,
+#sudedit {
   background-color: var(--secondary);
   position: relative;
   border: 0.1875em groove var(--background);
-  width: fit-content;
+  width: 80%;
+}
+
+#sudedit form,
+#sudadd form {
+  width: 100%;
+}
+
+#sudedit table,
+#sudadd table {
+  width: 90%;
+}
+
+#sudedit .card {
+  background-color: var(--secondary);
+  border: none;
 }
 
 #sudtitle,
 #suddes,
 #sudi,
 #sudss,
-#sudsname {
+#sudsname,
+#sudsimage,
+.thing {
   font-size: 0.9375em;
+}
+
+textarea,
+input {
+  width: 100%;
 }
 
 /* images */
@@ -176,6 +214,18 @@ footer a {
 .images {
   max-width: 250px;
   max-height: 250px;
+  justify-content: center;
+}
+
+img.images {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+#singlecard img {
+  max-width: 350px;
+  max-height: 350px;
 }
 
 /* single sud styling */
@@ -211,7 +261,8 @@ footer a {
 }
 
 #singlealert {
-  font-size: 0.75em;
+  font-size: 1.2em;
+  font-style: italic;
 }
 
 /* Profile page styling */
@@ -219,6 +270,13 @@ footer a {
   font-size: 1.25em;
   font-weight: 700;
   margin-left: 2.5em;
-  color: var(--background);
+  color: var(--tertiary);
   text-decoration: underline;
+}
+
+@media screen and (max-width: 525px) {
+  .inside-card {
+    flex-wrap: wrap;
+    justify-content: center;
+  }
 }

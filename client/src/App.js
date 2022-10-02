@@ -53,7 +53,7 @@ function App() {
             setOption={setOption}
             currentOption={currentOption}
           />
-          <div id="main" className="mb-4">
+          <div id="main" >
             <Routes>
               <Route
                 path="/"

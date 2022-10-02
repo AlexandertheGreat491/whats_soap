@@ -15,6 +15,7 @@ const Profile = () => {
 
   return (
     <div>
+      <br></br>
       <h2 id="profileheader">Viewing {`${username}'s`} profile</h2>
       <Suds recipes={recipe} />
     </div>

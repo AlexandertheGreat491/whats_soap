@@ -96,53 +96,98 @@ function EditSud(props) {
 
   return (
     <div>
-      {data && (
-        <div>
-          <h2>Edit a Sud</h2>
-          <form onSubmit={handleFormSubmit}>
-            <p>Title: </p>
-            <input
-              placeholder="Title"
-              value={title}
-              onChange={titleChange}
-            ></input>
-            <br></br>
-            <p>Description: </p>
-            <textarea
-              placeholder="Description"
-              value={description}
-              onChange={descriptionChange}
-            ></textarea>
-            <p>Ingredients: </p>
-            <textarea
-              placeholder="Ingredients"
-              value={ingredients}
-              onChange={ingredientChange}
-            ></textarea>
-            <br></br>
-            <p>Steps: </p>
-            <textarea
-              placeholder="Steps"
-              value={steps}
-              onChange={stepChange}
-            ></textarea>
-            <br></br>
-            <p>Name: </p>
-            <input
-              placeholder="username"
-              value={username}
-              onChange={nameChange}
-            ></input>
-            <br></br>
-            <p>
-              Image:
-            </p>
+      <br></br>
+      <div id="sudedit" className="card justify-content-center p-2 container">
+        {data && (
+          <div className="card justify-content-center p-2 container">
+            <form onSubmit={handleFormSubmit} >
+              <h2 id="sud-edit" style={{ color: "brown" }} className="me-4">Edit a Sud</h2>
+              <table>
 
-            <button onClick={uploadImage}>Upload</button>
-            <button>Submit</button>
-          </form>
-        </div>
-      )}
+                <tr>
+                  <th><p style={{ color: "brown" }}
+                    className="m-2 thing">
+                    Title:
+                  </p></th>
+                  <th><input
+                    className="m-2"
+                    placeholder="Title"
+                    value={title}
+                    onChange={titleChange}
+                  ></input></th>
+                </tr>
+
+                <tr>
+                  <th><p style={{ color: "brown" }} className="m-2 thing">
+                    Description:
+                  </p></th>
+                  <th><textarea
+                    placeholder="Description"
+                    value={description}
+                    onChange={descriptionChange}
+                    className="m-2"
+                  ></textarea></th>
+                </tr>
+
+                <tr>
+                  <th><p style={{ color: "brown" }} className="m-2 thing">
+                    Ingredients:
+                  </p></th>
+                  <th><textarea
+                    placeholder="Ingredients"
+                    value={ingredients}
+                    onChange={ingredientChange}
+                    className="m-2"
+                  ></textarea></th>
+                </tr>
+
+                <tr>
+                  <th><p style={{ color: "brown" }} className="m-2 thing">
+                    Steps:
+                  </p></th>
+                  <th><textarea
+                    placeholder="Steps"
+                    value={steps}
+                    onChange={stepChange}
+                    className="m-2"
+                  ></textarea></th>
+                </tr>
+
+
+                <tr>
+                  <th><p style={{ color: "brown" }} className="m-2 thing">
+                    Name:
+                  </p></th>
+                  <th><input
+                    placeholder="username"
+                    value={username}
+                    onChange={nameChange}
+                    className="m-2"
+                  ></input></th>
+                </tr>
+
+
+              </table>
+
+              <div className="d-flex">
+                <br></br>
+                <button id="uploadedit"
+                  style={{ color: "black" }}
+                  className="btn d-block m-2"
+                  onClick={uploadImage}>Upload Image</button>
+              </div>
+
+              <button
+                id="submitedit"
+                style={{ color: "black" }}
+                className="btn d-block m-2"
+              >
+                Submit
+              </button>
+            </form>
+          </div>
+        )}
+      </div>
     </div>
   );
 }

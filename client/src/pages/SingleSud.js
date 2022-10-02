@@ -46,7 +46,7 @@ function SingleSud() {
           <h3 id="instructionsheader">Instructions</h3>
           <p className="single">{recipe.steps}</p>
           <p id='timestamp'>posted by
-            <Link to={`/profile/${recipe.username}`}><span className="m-2">{recipe.username}</span></Link>
+            <Link to={`/profile/${recipe.username}`}><span className="m-2 orange-name">{recipe.username}</span></Link>
             on {recipe.createdAt}</p>
           {Auth.loggedIn() ? (
             <>

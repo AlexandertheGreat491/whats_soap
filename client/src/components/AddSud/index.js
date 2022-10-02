@@ -96,62 +96,90 @@ function AddSud(props) {
     <div>
       <br></br>
       <div id="sudadd" className="card justify-content-center p-2 container">
-        <form onSubmit={handleFormSubmit}>
+        <form onSubmit={handleFormSubmit} >
           <h2 id="add" style={{ color: "brown" }} className="me-4">
             Add a Sud:
           </h2>
-          <p style={{ color: "brown" }} id="sudtitle">
-            Title:{" "}
-          </p>
-          <input
-            placeholder="Title"
-            value={title}
-            onChange={titleChange}
-          ></input>
-          <p style={{ color: "brown" }} id="suddes">
-            Description:{" "}
-          </p>
-          <textarea
-            placeholder="Description"
-            value={description}
-            onChange={descriptionChange}
-          ></textarea>
-          <p style={{ color: "brown" }} id="sudi">
-            Ingredients:{" "}
-          </p>
-          <textarea
-            placeholder="Ingredients"
-            value={ingredients}
-            onChange={ingredientChange}
-          ></textarea>
-          <p style={{ color: "brown" }} id="sudss">
-            Steps:{" "}
-          </p>
-          <textarea
-            placeholder="Steps"
-            value={steps}
-            onChange={stepChange}
-          ></textarea>
+          <table>
 
-          <p style={{ color: "brown" }} id="sudsname">
-            Name:{" "}
-          </p>
-          <input
-            placeholder="username"
-            value={username}
-            onChange={nameChange}
-          ></input>
-          <p>
-            Image:
-          </p>
+            <tr>
+              <th><p style={{ color: "brown" }}
+                className="m-2"
+                id="sudtitle">
+                Title:
+              </p></th>
+              <th><input
+                className="m-2"
+                placeholder="Title"
+                value={title}
+                onChange={titleChange}
+              ></input></th>
+            </tr>
 
-          <button onClick={uploadImage}>Upload</button>
+            <tr>
+              <th><p style={{ color: "brown" }} id="suddes" className="m-2">
+                Description:
+              </p></th>
+              <th><textarea
+                placeholder="Description"
+                value={description}
+                onChange={descriptionChange}
+                className="m-2"
+              ></textarea></th>
+            </tr>
 
-          <br></br>
+            <tr>
+              <th><p style={{ color: "brown" }} id="sudi" className="m-2">
+                Ingredients:
+              </p></th>
+              <th><textarea
+                placeholder="Ingredients"
+                value={ingredients}
+                onChange={ingredientChange}
+                className="m-2"
+              ></textarea></th>
+            </tr>
+
+            <tr>
+              <th><p style={{ color: "brown" }} id="sudss" className="m-2">
+                Steps:
+              </p></th>
+              <th><textarea
+                placeholder="Steps"
+                value={steps}
+                onChange={stepChange}
+                className="m-2"
+              ></textarea></th>
+            </tr>
+
+
+            <tr>
+              <th><p style={{ color: "brown" }} id="sudsname" className="m-2">
+                Name:
+              </p></th>
+              <th><input
+                placeholder="username"
+                value={username}
+                onChange={nameChange}
+                className="m-2"
+              ></input></th>
+            </tr>
+
+
+          </table>
+
+          <div className="d-flex">
+            <br></br>
+            <button id="upload"
+              style={{ color: "black" }}
+              className="btn d-block m-2"
+              onClick={uploadImage}>Upload Image</button>
+          </div>
+
           <button
             id="submit"
             style={{ color: "black" }}
-            className="btn d-block mt-2 me-2 mb-2"
+            className="btn d-block m-2"
           >
             Submit
           </button>

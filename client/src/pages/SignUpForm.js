@@ -44,52 +44,50 @@ const SignUpForm = () => {
 
   return (
     <main className="d-flex flex-row justify-content-center">
-      <div className="col-12 col-md-6">
-        <div id="signup" className="card mt-5 ms-2 me-2 mb-5">
-          <h4 id="signheader" style={{ color: "brown" }} className="card-header">
-            Sign Up
-          </h4>
-          <div className="card-body">
-            <form onSubmit={handleFormSubmit}>
-              <input
-                className="form-input m-1"
-                placeholder="Your username"
-                name="username"
-                type="username"
-                id="username"
-                value={formState.username}
-                onChange={handleChange}
-              />
-              <input
-                className="form-input m-1"
-                autoComplete="current-password"
-                placeholder="Your email"
-                name="email"
-                type="email"
-                id="email"
-                value={formState.email}
-                onChange={handleChange}
-              />
-              <input
-                className="form-input"
-                placeholder="Your password"
-                name="password"
-                type="password"
-                id="password"
-                value={formState.password}
-                onChange={handleChange}
-              />
-              <button
-                id="submit"
-                style={{ color: "black" }}
-                className="btn d-block mt-2 me-2 mb-2 ms-1"
-                type="submit"
-              >
-                Submit
-              </button>
-            </form>
-            {error && <div>Signup failed</div>}
-          </div>
+      <div id="signup" className="card m-5">
+        <h4 id="signheader" style={{ color: "brown" }} className="card-header">
+          Sign Up
+        </h4>
+        <div className="card-body">
+          <form onSubmit={handleFormSubmit}>
+            <input
+              className="form-input m-1"
+              placeholder="Your username"
+              name="username"
+              type="username"
+              id="username"
+              value={formState.username}
+              onChange={handleChange}
+            />
+            <input
+              className="form-input m-1"
+              autoComplete="current-password"
+              placeholder="Your email"
+              name="email"
+              type="email"
+              id="email"
+              value={formState.email}
+              onChange={handleChange}
+            />
+            <input
+              className="form-input m-1"
+              placeholder="Your password"
+              name="password"
+              type="password"
+              id="password"
+              value={formState.password}
+              onChange={handleChange}
+            />
+            <button
+              id="submit"
+              style={{ color: "black" }}
+              className="btn d-block m-2"
+              type="submit"
+            >
+              Submit
+            </button>
+          </form>
+          {error && <div>Signup failed</div>}
         </div>
       </div>
     </main>
