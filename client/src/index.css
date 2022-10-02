@@ -81,6 +81,7 @@ nav a {
 
 .card h2 {
   font-size: 1.25em;
+  font-weight: 700;
   color: var(--background);
 }
 
@@ -126,7 +127,6 @@ footer a {
   font-size: 1.25em;
   font-weight: 700;
   color: var(--background);
-  font-size: 1.25em;
 }
 
 /* used to apply styling to all submit buttons */
@@ -142,6 +142,11 @@ footer a {
   background-color: var(--secondary);
   position: relative;
   border: 0.1875em groove var(--background);
+}
+
+#signheader {
+  font-size: 1.25em;
+  font-weight: 700;
 }
 
 /* Add sud styling */
@@ -164,4 +169,44 @@ footer a {
 #sudss,
 #sudsname {
   font-size: 0.9375em;
+}
+
+/* single sud styling */
+#single {
+  font-size: 1.25em;
+  color: var(--background);
+  text-decoration: none;
+}
+
+#des, #ingredientsheader, #instructionsheader {
+  font-size: 0.9375em;
+}
+
+.single {
+  font-size: 0.875em;
+}
+
+#singlecard {
+  background-color: var(--secondary);
+  border: 0.1875em groove var(--background);
+}
+
+#edit, #delete {
+  border: 0.1875em groove var(--primary);
+  border-radius: 0.3125em;
+  background-color: var(--tertiary);
+  color: var(--background);
+}
+
+#singlealert {
+  font-size: 0.75em;
+}
+
+/* Profile page styling */
+#profileheader {
+  font-size: 1.25em;
+  font-weight: 700; 
+  margin-left: 2.5em;
+  color: var(--background);
+  text-decoration: underline;
 }

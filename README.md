@@ -1,6 +1,8 @@
 [![Generic badge](https://img.shields.io/badge/license-MIT-<COLOR>.svg)](#license)
   # What's Soap
+
   ## Description
+
   A site for displaying your favorite soap recipes. You can create a user to save soap recipes.
   ## Table of Contents
   * [Installation](#installation)
@@ -10,15 +12,20 @@
   * [Questions](#questions)
   
   ## Installation
+
   Clone from repo and run 'npm run install' from the root directory, then run 'npm i concurrently'.
+
   ## Usage
+
   Navigate to: https://whats-soap.herokuapp.com/
   Create a user and start adding soap recipes.
+
   ## Screenshots
 
 <b>Image running on a computer</b>
 
  ![Mainpage](https://user-images.githubusercontent.com/103293341/193467236-4207c8e3-6c39-4dff-92fa-42903526bc3e.PNG) 
+
   ## Credits
    [bootstrap](https://www.npmjs.com/package/bootstrap)
 
@@ -55,7 +62,9 @@
    [Mongoose Queries](https://mongoosejs.com/docs/queries.html)
 
    [Mutations and Input Types](https://graphql.org/graphql-js/mutations-and-input-types/)
+
   ## Questions
+  
   * GitHub: [NickSchenck](https://github.com/NickSchenck)
 
   * GitHub: [AlexandertheGreat491](https://github.com/AlexandertheGreat491)

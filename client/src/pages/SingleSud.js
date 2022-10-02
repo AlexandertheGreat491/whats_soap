@@ -36,29 +36,29 @@ function SingleSud() {
   return (
     <div>
       {data && (
-        <div>
-          <h2>{recipe.title}</h2>
-          <h3>Description</h3>
-          <p>{recipe.description}</p>
-          <h3>Ingredients</h3>
-          <p>{recipe.ingredients}</p>
-          <h3>Instructions</h3>
-          <p>{recipe.steps}</p>
-          <p>
+        <div id="singlecard" className="card p-2 m-3 d-inline-flex">
+          <h2 id="single">{recipe.title}</h2>
+          <h3 id="des">Description</h3>
+          <p className="single">{recipe.description}</p>
+          <h3 id="ingredientsheader">Ingredients</h3>
+          <p className="single">{recipe.ingredients}</p>
+          <h3 id="instructionsheader">Instructions</h3>
+          <p className="single">{recipe.steps}</p>
+          <p id="timestamp">
             posted by {recipe.username} on {recipe.createdAt}
           </p>
           {Auth.loggedIn() ? (
             <>
-              <Link className="buttons p-1 m-2" to={`/edit/${recipe._id}`}>
+              <Link style={{width:"5%"}} id="edit" className="ps-3 mb-1" to={`/edit/${recipe._id}`}>
                 Edit
               </Link>
-              <a className="buttons p-1 m-2" href="/" onClick={deleteSubmit}>
+              <a style={{width:"5%"}} id="delete" className="ps-2" href="/" onClick={deleteSubmit}>
                 Delete
               </a>
             </>
           ) : (
             <>
-              <p>Please log in to edit a Sud</p>
+              <p id="singlealert">Please log in to edit a Sud</p>
             </>
           )}
         </div>

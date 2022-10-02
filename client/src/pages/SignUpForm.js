@@ -46,7 +46,7 @@ const SignUpForm = () => {
     <main className="d-flex flex-row justify-content-center">
       <div className="col-12 col-md-6">
         <div id="signup" className="card mt-5 ms-2 me-2 mb-5">
-          <h4 style={{ color: "brown" }} className="card-header">
+          <h4 id="signheader" style={{ color: "brown" }} className="card-header">
             Sign Up
           </h4>
           <div className="card-body">
