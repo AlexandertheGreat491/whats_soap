@@ -6,8 +6,7 @@ const Header = (props) => {
 
   const {
     options = [],
-    setOption,
-    currentOption,
+    setOption
   } = props;
 
   const logout = event => {
@@ -25,7 +24,6 @@ const Header = (props) => {
         <nav className="text-center container">
           {Auth.loggedIn() ? (
             <>
-              <Link className='buttons p-1 m-1' to="/profile">Me</Link>
               <a className='buttons p-1 m-1' href="/" onClick={logout}>
                 Logout
               </a>

@@ -32,8 +32,8 @@ mutation addUser(
 `;
 
 export const ADD_SUD = gql`
-mutation Mutation($title: String!, $description: String!, $ingredients: String!, $steps: String!, $username: String!) {
-  addSud(title: $title, description: $description, ingredients: $ingredients, steps: $steps, username: $username) {
+mutation Mutation($title: String!, $description: String!, $ingredients: String!, $steps: String!, $username: String!, $url: String) {
+  addSud(title: $title, description: $description, ingredients: $ingredients, steps: $steps, username: $username, url: $url) {
     _id
     title
     description

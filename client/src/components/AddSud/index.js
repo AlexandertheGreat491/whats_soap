@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { QUERY_SUDS } from "../../utils/queries";
 import { ADD_SUD } from "../../utils/mutations";
 import { useMutation } from "@apollo/client";
@@ -42,24 +42,27 @@ function AddSud(props) {
     returnJustUrl: true
   };
 
-  const [url, setUrl] = useState("banana");
+  // const [url, setUrl] = useState("banana");
+  var url = "apple";
 
   const uploadImage = (event) => {
     event.preventDefault();
-    ReactCloudinaryUploader.open(choices).then(image => {
-      console.log(image);
-      console.log(image[0]);
-      console.log(setUrl());
-      setUrl(image[0]);
-      console.log(url);
-    }).catch(err => {
-      console.error(err);
-    });
+
+    ReactCloudinaryUploader
+      .open(choices)
+      .then(image => {
+        url = image[0];
+        console.log(url);
+      });
   }
+
+  useEffect(() => {
+    console.log(url);
+  }, [url]);
 
   // end cloudinary
 
-  const [addSud, { error }] = useMutation(ADD_SUD, {
+  const [addSud] = useMutation(ADD_SUD, {
     update(cache, { data: { addSud } }) {
       const { suds } = cache.readQuery({ query: QUERY_SUDS });
       cache.writeQuery({
@@ -70,6 +73,8 @@ function AddSud(props) {
   });
 
   const handleFormSubmit = async (event) => {
+
+    console.log(title, description, ingredients, steps, username, url);
     try {
       await addSud({
         variables: {
@@ -94,6 +99,7 @@ function AddSud(props) {
 
   return (
     <div>
+      <br></br>
       <div id="sudadd" className="card justify-content-center p-2 container">
         <form onSubmit={handleFormSubmit}>
           <h2 id="add" style={{ color: "brown" }} className="me-4">
