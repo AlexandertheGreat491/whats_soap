@@ -10,6 +10,7 @@ import {
 } from "@apollo/client";
 import { setContext } from "@apollo/client/link/context";
 
+
 import NoMatch from "./pages/NoMatch";
 import Home from "./pages/Home";
 import Header from "./components/Header";
@@ -18,6 +19,7 @@ import SignUpForm from "./pages/SignUpForm";
 import Footer from "./components/Footer";
 import SingleSud from "./pages/SingleSud";
 import EditSud from "./pages/EditSud";
+import Profile from "./pages/Profile";
 
 const httpLink = createHttpLink({
   uri: "/graphql",
@@ -51,7 +53,7 @@ function App() {
             setOption={setOption}
             currentOption={currentOption}
           />
-          <div id="main" className="mb-4">
+          <div id="main" >
             <Routes>
               <Route
                 path="/"
@@ -76,6 +78,7 @@ function App() {
                   />
                 }
               />
+              <Route path="/profile/:username" element={<Profile />} />
               <Route path="*" element={<NoMatch />} />
             </Routes>
           </div>

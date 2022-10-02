@@ -17,6 +17,7 @@ const typeDefs = gql`
     steps: String
     createdAt: String
     username: String
+    url: String
   }
 
   type Auth {
@@ -42,6 +43,7 @@ const typeDefs = gql`
       ingredients: String!
       steps: String!
       username: String!
+      url: String
     ): Sud
     editSud(
       title: String!
@@ -50,10 +52,9 @@ const typeDefs = gql`
       steps: String!
       username: String!
       sudId: ID!
+      url: String
     ): Sud
-    deleteSud(
-      sudId: ID!
-    ): Sud
+    deleteSud(sudId: ID!): Sud
   }
 `;
 

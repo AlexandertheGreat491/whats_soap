@@ -1,20 +1,32 @@
 [![Generic badge](https://img.shields.io/badge/license-MIT-<COLOR>.svg)](#license)
   # What's Soap
+
   ## Description
-  A site for displaying your favorite soap recipes. You can create a user to save soap recipes.
+
+  A site for displaying your favorite soap recipes. You can create a user to save and edit soap recipes.
+
   ## Table of Contents
   * [Installation](#installation)
   * [Usage](#usage)
+  * [Screenshots](#screenshots)
   * [Credits](#credits)
   * [Questions](#questions)
   
   ## Installation
-  Clone from repo and run 'npm run install' from the root directory, then run 'npm i concurrently'.
+
+  Clone from repo and run `npm run install` from the root directory, then run `npm i concurrently`.
+
   ## Usage
-  Navigate to: 
+
+  Navigate to: https://whats-soap.herokuapp.com/
   Create a user and start adding soap recipes.
-  ## License
-  ### This app is licensed under the [MIT](https://opensource.org/licenses/MIT) license.
+
+  ## Screenshots
+
+<b>Image running on a computer</b>
+
+ ![Mainpage](https://user-images.githubusercontent.com/103293341/193481030-75cda666-a76c-4633-8fb3-dd483cbf89e3.PNG)
+
   ## Credits
    [bootstrap](https://www.npmjs.com/package/bootstrap)
 
@@ -51,7 +63,13 @@
    [Mongoose Queries](https://mongoosejs.com/docs/queries.html)
 
    [Mutations and Input Types](https://graphql.org/graphql-js/mutations-and-input-types/)
+
+   [Uploading with Cloudinary](https://medium.com/geekculture/how-to-upload-images-to-cloudinary-with-a-react-app-f0dcc357999c)
+
+   [React-Cloudinary](https://www.npmjs.com/package/@app-masters/react-cloudinary-uploader)
+
   ## Questions
+  
   * GitHub: [NickSchenck](https://github.com/NickSchenck)
 
   * GitHub: [AlexandertheGreat491](https://github.com/AlexandertheGreat491)

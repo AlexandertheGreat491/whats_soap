@@ -8,6 +8,10 @@ body {
   -moz-osx-font-smoothing: grayscale;
 }
 
+html {
+  background-color: var(--quaternary);
+}
+
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
@@ -15,14 +19,19 @@ code {
 
 /*color pallet taken from https://coolors.co/565656-b2ffa9-ff4a1c-81523f-3f2a2b*/
 :root {
-  --primary: hsla(0, 0%, 34%, 1); /*davys-grey*/
-  --secondary: hsla(114, 100%, 83%, 1); /*mint-green*/
-  --tertiary: hsla(12, 100%, 55%, 1); /*red-orange-color-wheel*/
-  --quaternary: hsla(17, 34%, 38%, 1); /*coffee*/
-  --background: hsla(357, 20%, 21%, 1); /*old-burgundy*/
+  --primary: hsla(0, 0%, 34%, 1);
+  /*davys-grey*/
+  --secondary: hsla(114, 100%, 83%, 1);
+  /*mint-green*/
+  --tertiary: hsla(12, 100%, 55%, 1);
+  /*red-orange-color-wheel*/
+  --quaternary: hsla(17, 34%, 38%, 1);
+  /*coffee*/
+  --background: hsla(357, 20%, 21%, 1);
+  /*old-burgundy*/
 }
 
-*{
+* {
   font-family: 'Roboto', sans-serif;
 }
 
@@ -32,7 +41,7 @@ header {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
-  width: 100%;
+  max-width: 100%;
 }
 
 header h1 {
@@ -57,6 +66,7 @@ nav a {
   border: 0.1875em groove var(--secondary);
   border-radius: 0.3125em;
   background-color: var(--quaternary);
+  color: var(--tertiary);
 }
 
 .buttons:hover {
@@ -71,6 +81,7 @@ nav a {
 
 .card h2 {
   font-size: 1.25em;
+  font-weight: 700;
   color: var(--background);
 }
 
@@ -78,13 +89,18 @@ nav a {
   text-decoration: none;
 }
 
-#description, #timestamp {
+#description,
+#timestamp {
   font-size: 0.9375em;
 }
 
 #main {
   background-color: var(--quaternary);
-  height: 100em;
+  margin-bottom: 100px;
+}
+
+.orange-name {
+  color: var(--tertiary);
 }
 
 /* footer styling */
@@ -116,34 +132,151 @@ footer a {
   font-size: 1.25em;
   font-weight: 700;
   color: var(--background);
-  font-size: 1.25em;
 }
 
-#submit {
+#login,
+#signup {
+  width: 300px;
+  justify-content: center;
+}
+
+/* used to apply styling to all submit buttons */
+#submit,
+#upload,
+#submitedit,
+#uploadedit {
   border: 0.1875em groove var(--primary);
   border-radius: 0.3125em;
   background-color: var(--tertiary);
   color: var(--background);
 }
 
+/* Signup form styling */
 #signup {
   background-color: var(--secondary);
   position: relative;
   border: 0.1875em groove var(--background);
 }
 
-#add {
+#signheader {
+  font-size: 1.25em;
+  font-weight: 700;
+}
+
+/* Add sud styling */
+#add,
+#sud-edit {
   font-size: 1.25em;
   font-weight: 700;
   text-decoration: underline;
 }
 
-#sudadd {
+#sudadd,
+#sudedit {
   background-color: var(--secondary);
   position: relative;
   border: 0.1875em groove var(--background);
+  width: 80%;
 }
 
-#sudtitle, #suddes, #sudi, #sudss, #sudsname {
+#sudedit form,
+#sudadd form {
+  width: 100%;
+}
+
+#sudedit table,
+#sudadd table {
+  width: 90%;
+}
+
+#sudedit .card {
+  background-color: var(--secondary);
+  border: none;
+}
+
+#sudtitle,
+#suddes,
+#sudi,
+#sudss,
+#sudsname,
+#sudsimage,
+.thing {
   font-size: 0.9375em;
+}
+
+textarea,
+input {
+  width: 100%;
+}
+
+/* images */
+
+.images {
+  max-width: 250px;
+  max-height: 250px;
+  justify-content: center;
+}
+
+img.images {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+#singlecard img {
+  max-width: 350px;
+  max-height: 350px;
+}
+
+/* single sud styling */
+#single {
+  font-size: 1.25em;
+  color: var(--background);
+  text-decoration: none;
+}
+
+#des,
+#ingredientsheader,
+#instructionsheader {
+  font-size: 0.9375em;
+}
+
+.single {
+  font-size: 0.875em;
+}
+
+#singlecard {
+  background-color: var(--secondary);
+  border: 0.1875em groove var(--background);
+}
+
+#edit,
+#delete {
+  border: 0.1875em groove var(--primary);
+  border-radius: 0.3125em;
+  background-color: var(--tertiary);
+  color: var(--background);
+  width: 70px;
+  text-align: center;
+}
+
+#singlealert {
+  font-size: 1.2em;
+  font-style: italic;
+}
+
+/* Profile page styling */
+#profileheader {
+  font-size: 1.25em;
+  font-weight: 700;
+  margin-left: 2.5em;
+  color: var(--tertiary);
+  text-decoration: underline;
+}
+
+@media screen and (max-width: 525px) {
+  .inside-card {
+    flex-wrap: wrap;
+    justify-content: center;
+  }
 }

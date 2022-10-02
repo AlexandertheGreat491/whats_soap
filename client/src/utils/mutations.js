@@ -1,4 +1,4 @@
-import { gql } from '@apollo/client';
+import { gql } from "@apollo/client";
 
 export const LOGIN_USER = gql`
   mutation login($email: String!, $password: String!) {
@@ -13,27 +13,19 @@ export const LOGIN_USER = gql`
 `;
 
 export const ADD_USER = gql`
-mutation addUser(
-    $username: String!
-    $email: String!
-    $password: String!
-) {
-    addUser(
-        username: $username
-        email: $email
-        password: $password
-    ) {
-        token
-        user {
-            _id
-        }
+  mutation addUser($username: String!, $email: String!, $password: String!) {
+    addUser(username: $username, email: $email, password: $password) {
+      token
+      user {
+        _id
+      }
     }
-}
+  }
 `;
 
 export const ADD_SUD = gql`
-mutation Mutation($title: String!, $description: String!, $ingredients: String!, $steps: String!, $username: String!) {
-  addSud(title: $title, description: $description, ingredients: $ingredients, steps: $steps, username: $username) {
+mutation Mutation($title: String!, $description: String!, $ingredients: String!, $steps: String!, $username: String!, $url: String) {
+  addSud(title: $title, description: $description, ingredients: $ingredients, steps: $steps, username: $username, url: $url) {
     _id
     title
     description
@@ -41,12 +33,13 @@ mutation Mutation($title: String!, $description: String!, $ingredients: String!,
     steps
     createdAt
     username
+    url
   }
 }`;
 
 export const EDIT_SUD = gql`
-mutation EditSud($title: String!, $description: String!, $ingredients: String!, $steps: String!, $username: String!, $sudId: ID!) {
-  editSud(title: $title, description: $description, ingredients: $ingredients, steps: $steps, username: $username, sudId: $sudId) {
+mutation Mutation($title: String!, $description: String!, $ingredients: String!, $steps: String!, $username: String!, $sudId: ID!, $url: String) {
+  editSud(title: $title, description: $description, ingredients: $ingredients, steps: $steps, username: $username, sudId: $sudId, url: $url) {
     _id
     title
     description
@@ -54,14 +47,15 @@ mutation EditSud($title: String!, $description: String!, $ingredients: String!, 
     steps
     createdAt
     username
+    url
   }
-}`;
+}
+`;
 
 export const DELETE_SUD = gql`
-mutation Mutation($sudId: ID!) {
-  deleteSud(sudId: $sudId) {
-    _id
+  mutation Mutation($sudId: ID!) {
+    deleteSud(sudId: $sudId) {
+      _id
+    }
   }
-}`;
-
-
+`;

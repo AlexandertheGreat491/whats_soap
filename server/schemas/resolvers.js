@@ -71,9 +71,8 @@ const resolvers = {
     // next to test
     addSud: async (
       _parent,
-      { title, description, ingredients, steps, username }
+      { title, description, ingredients, steps, username, url }
     ) => {
-
       const sud = await Sud.create({
         title: title,
         description: description,
@@ -81,13 +80,14 @@ const resolvers = {
         steps: steps,
         createdAt: Date.now(),
         username: username,
+        url: url
       });
       return sud;
     },
 
     editSud: async (
       _parent,
-      { sudId, title, description, ingredients, steps, username }
+      { sudId, title, description, ingredients, steps, username, url }
     ) => {
       const updatedSud = await Sud.findByIdAndUpdate(
         { _id: sudId },
@@ -98,20 +98,17 @@ const resolvers = {
           steps: steps,
           createdAt: Date.now(),
           username: username,
+          url: url
         },
         { new: true }
-      )
+      );
       return updatedSud;
     },
 
-    deleteSud: async (
-      _parent, { sudId }
-    ) => {
-      const deletedSud = await Sud.findByIdAndDelete(
-        { _id: sudId }
-      )
+    deleteSud: async (_parent, { sudId }) => {
+      const deletedSud = await Sud.findByIdAndDelete({ _id: sudId });
       return deletedSud;
-    }
+    },
   },
 };
 
