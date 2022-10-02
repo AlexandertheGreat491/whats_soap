@@ -48,8 +48,9 @@ function EditSud(props) {
     returnJustUrl: true
   };
 
-  // const [url, setUrl] = useState("banana");
-  var url = "apple";
+  const [isUploaded, setUploaded] = useState(false);
+
+  var url = "";
 
   const uploadImage = (event) => {
     event.preventDefault();
@@ -58,6 +59,7 @@ function EditSud(props) {
       .open(choices)
       .then(image => {
         url = image[0];
+        setUploaded(true);
       });
   }
 
@@ -103,7 +105,6 @@ function EditSud(props) {
             <form onSubmit={handleFormSubmit} >
               <h2 id="sud-edit" style={{ color: "brown" }} className="me-4">Edit a Sud</h2>
               <table>
-
                 <tr>
                   <th><p style={{ color: "brown" }}
                     className="m-2 thing">
@@ -116,7 +117,6 @@ function EditSud(props) {
                     onChange={titleChange}
                   ></input></th>
                 </tr>
-
                 <tr>
                   <th><p style={{ color: "brown" }} className="m-2 thing">
                     Description:
@@ -128,7 +128,6 @@ function EditSud(props) {
                     className="m-2"
                   ></textarea></th>
                 </tr>
-
                 <tr>
                   <th><p style={{ color: "brown" }} className="m-2 thing">
                     Ingredients:
@@ -140,7 +139,6 @@ function EditSud(props) {
                     className="m-2"
                   ></textarea></th>
                 </tr>
-
                 <tr>
                   <th><p style={{ color: "brown" }} className="m-2 thing">
                     Steps:
@@ -152,8 +150,6 @@ function EditSud(props) {
                     className="m-2"
                   ></textarea></th>
                 </tr>
-
-
                 <tr>
                   <th><p style={{ color: "brown" }} className="m-2 thing">
                     Name:
@@ -165,16 +161,14 @@ function EditSud(props) {
                     className="m-2"
                   ></input></th>
                 </tr>
-
-
               </table>
-
               <div className="d-flex">
                 <br></br>
                 <button id="uploadedit"
                   style={{ color: "black" }}
                   className="btn d-block m-2"
                   onClick={uploadImage}>Upload Image</button>
+                {isUploaded && <span className="mt-3 ms-3" style={{ color: "brown" }}>Image uploaded!</span>}
               </div>
 
               <button
