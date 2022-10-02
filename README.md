@@ -5,6 +5,7 @@
   ## Table of Contents
   * [Installation](#installation)
   * [Usage](#usage)
+  * [Screenshots](#screenshots)
   * [Credits](#credits)
   * [Questions](#questions)
   
@@ -13,13 +14,11 @@
   ## Usage
   Navigate to: https://whats-soap.herokuapp.com/
   Create a user and start adding soap recipes.
-  ## License
-  ### This app is licensed under the [MIT](https://opensource.org/licenses/MIT) license.
   ## Screenshots
 
-|                <b>Image running on a computer</b>                 |
-| :---------------------------------------------------------------: |
-| ![space-1.jpg](./src/assets/images/screenshots/Screenshotweb.jpg) |
+<b>Image running on a computer</b>
+
+ ![screenshot1](./src/assets/images/Mainpage.PNG) |
   ## Credits
    [bootstrap](https://www.npmjs.com/package/bootstrap)
 
