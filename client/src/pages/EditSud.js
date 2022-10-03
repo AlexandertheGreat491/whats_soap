@@ -40,15 +40,12 @@ function EditSud(props) {
 
   // cloudinary stuff for images
 
-  // OPTION 1
   let choices = {
     cloud_name: "oliviacm",
     upload_preset: "ujb638tm",
     multiple: true,
     returnJustUrl: true
   };
-
-  const [isUploaded, setUploaded] = useState(false);
 
   var url = "";
 
@@ -59,7 +56,6 @@ function EditSud(props) {
       .open(choices)
       .then(image => {
         url = image[0];
-        setUploaded(true);
       });
   }
 
@@ -168,7 +164,6 @@ function EditSud(props) {
                   style={{ color: "black" }}
                   className="btn d-block m-2"
                   onClick={uploadImage}>Upload Image</button>
-                {isUploaded && <span className="mt-3 ms-3" style={{ color: "brown" }}>Image uploaded!</span>}
               </div>
 
               <button
