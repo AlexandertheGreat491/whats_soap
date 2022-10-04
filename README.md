@@ -28,6 +28,9 @@
  ![Mainpage](https://user-images.githubusercontent.com/103293341/193481030-75cda666-a76c-4633-8fb3-dd483cbf89e3.PNG)
 
   ## Credits
+
+  [21 Creative Homemade Soap Recipes for Beginners](https://www.thesprucecrafts.com/basic-soap-making-recipes-517179)
+
    [bootstrap](https://www.npmjs.com/package/bootstrap)
 
    [Bootstrap Docs](https://getbootstrap.com/docs/5.0/getting-started/introduction/)
